@@ -7,7 +7,7 @@ auth_bp = Blueprint('auth', __name__)
 @auth_bp.route('/register', methods=['POST'])
 def register():
     data = request.json
-    username = data.get('username')
+    username = data.get('email')
     password = data.get('password')
     
     if User.query.filter_by(username=username).first():
@@ -23,7 +23,7 @@ def register():
 @auth_bp.route('/login', methods=['POST'])
 def login():
     data = request.json
-    username = data.get('username')
+    username = data.get('email')
     password = data.get('password')
 
     user = User.query.filter_by(username=username).first()
