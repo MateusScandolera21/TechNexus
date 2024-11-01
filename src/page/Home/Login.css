@@ -1,0 +1,209 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+/*.login-logo{
+  display: flex;
+  justify-content: space-between;
+}*/
+
+.signup-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.signup-container {
+  display: flex;
+  align-items: center;
+}
+
+.signup-container a.signup-button {
+  margin-left: 5px;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #333;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.signup-container a.signup-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Estilos da seção esquerda e direita */
+.login-left {
+  flex: 0 0 40%;
+  max-width: 450px;
+  background: linear-gradient(135deg, #0c6f70, #4b9474);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-right p{
+  padding-bottom: 1.5rem;
+}
+
+/* Restante dos estilos */
+.input-group {
+ width: 31.25rem;
+ max-width: 800px; 
+ margin-bottom: 1rem; 
+ position: relative;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon .icon {
+  position: absolute;
+  left: 10px; 
+  top: 50%;
+  transform: translateY(-50%); 
+  color: #333;
+  font-size: 1.2rem; 
+}
+
+.input-icon input {
+  width: 100%;
+  padding: 1.5rem;
+  padding-left: 2.5rem; 
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/*.input-group input {
+  width: 100%;
+  padding: 1.5rem;
+  padding-left: 30px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}*/
+
+button {
+  width: 31.25rem;
+  max-width: 800px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: #24243E;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+button .button-text {
+  flex-grow: 1; 
+  text-align: left; 
+}
+
+
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+.options a {
+  color: #333;
+  text-decoration: none;
+}
+
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .login-container {
+    flex-direction: column;
+    padding: auto;
+  }
+
+  .login-left, .login-right {
+    width: 100%; 
+    max-width: none; 
+    padding: 0.5rem; 
+  }
+
+  .input-group {
+    width: 90%; 
+    margin: 0 auto; 
+    display: block; 
+    text-align: center; 
+    padding-bottom: 10px;
+  }
+  
+
+  button {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    display: block; 
+    text-align: center; 
+  }
+
+  button .button-icon {
+    display: none; 
+  }
+  
+
+  .signup-container {
+    font-size: 0.8rem; 
+  }
+
+  .options {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%; 
+    padding: 0 1rem; 
+    font-size: 0.7rem;
+    margin: 0 auto;
+  }
+  .signup-container p{
+    display: none;
+  }
+}
+
+/* Ajustes para telas médias */
+@media (max-width: 768px) {
+  .login-left, .login-right {
+    padding: 1rem; /* Reduz o padding */
+    width: 100%; /* Garante que ocupem a largura total */
+  }
+
+  .signup-container {
+    font-size: 0.9rem; /* Ajusta a fonte para telas médias */
+  }
+}
