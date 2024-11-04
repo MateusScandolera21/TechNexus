@@ -1,0 +1,153 @@
+.register-container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+
+.sidebar {
+  flex: 0 0 30%;
+  max-width: 450px;
+  background: linear-gradient(
+    135deg,
+    rgba(12, 111, 112, 0.8),
+    rgba(75, 148, 116, 0.8),
+    rgba(12, 111, 112, 0.8)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.88rem;
+  justify-content: center;
+  padding: 2rem 0;
+  isolation: isolate;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: black;
+  position: relative;
+  transition: all 0.4s ease-in;
+}
+
+.circle::before {
+  content: "";
+  width: 2px;
+  height: 30px; 
+  background-color: white;
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  transition: all 0.4s ease-in;
+}
+
+.circle.active::after {
+  content: "";
+  width: 20px; 
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1; 
+}
+
+.circle.active {
+  position: relative;
+}
+
+.step:last-child .circle::before {
+  display: none;
+}
+
+.step-number {
+  margin-left: 10px; 
+  color: white; 
+  font-size: 16px;
+}
+
+/*Main*/
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+}
+
+.main h2{
+  margin-bottom: 3rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column; /* Mantém os pares de input e label em coluna */
+  align-items: center; /* Centraliza os pares de input e label horizontalmente */
+  margin: 20px 0;
+}
+
+.option {
+  display: flex; /* Permite que o input e o label fiquem lado a lado */
+  align-items: center; /* Alinha verticalmente os itens */
+  width: 100%; /* Ocupa toda a largura do contêiner pai */
+  max-width: 400px; /* Limita a largura máxima dos pares */
+  margin-bottom: 10px; /* Espaço entre os pares */
+  justify-content: flex-start; /* Alinha o conteúdo no centro horizontalmente */
+}
+
+.single-option {
+  margin-bottom: 20px; /* Espaço adicional abaixo do input1 para separá-lo dos outros */
+}
+
+.options input[type="radio"] {
+  margin-right: 10px; /* Espaço entre o radio e o label */
+  transform: scale(1.5); /* Aumenta o tamanho do input radio, se necessário */
+}
+
+.options label {
+  font-weight: bold;
+  min-width: 100px; 
+  text-align: left; 
+}
+
+/* botao padrão*/
+
+.next-button {
+  width: 31.25rem;
+  max-width: 800px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: #24243E;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+button .button-text {
+  flex-grow: 1; 
+  text-align: left; 
+}

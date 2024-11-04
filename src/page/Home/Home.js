@@ -1,16 +1,18 @@
 import React from 'react';
-import './Login.css';
+import './Styles.css';
 import { BsArrowBarRight } from "react-icons/bs";
 import { BsEnvelope } from "react-icons/bs";
 import { BsLock } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 
-const Login = () => {
+
+const Home = () => {
   return (
     <div className="login-container">
       {/* Botão CADASTRE-SE */}
       <div className="signup-container">
         <p>Ainda Não possui uma conta? </p>
-        <a href="#register" className="signup-button">CADASTRE-SE</a>
+        <Link to="/register" className="signup-button">CADASTRE-SE</Link>
       </div>
 
       {/* Informações */}
@@ -21,7 +23,17 @@ const Login = () => {
         </div>
         <div className="login-message">
           <h2>Oportunidades de Crescimento Profissional</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+          <p>
+            Aqui, networking é mais do que um encontro de
+            interesses; é a fundação para as inovações que transformam o mundo.
+          </p>
+          <p>
+            Quando talentos e conhecimentos se unem, o impossível torna-se possível.
+          </p>
+          <p>
+            Somos a ponte que conecta talentos, o catalisador que promove o crescimento, e a
+            plataforma que facilita o progresso.
+          </p>
         </div>
       </div>
 
@@ -44,11 +56,12 @@ const Login = () => {
               <input type="password" id="password" placeholder="********" />
             </div>
           </div>
+          
           <button type="submit">
             <span className="button-text">Entrar</span>
             <BsArrowBarRight size={20} className='button-icon'/>
-
           </button>
+
           <div className="options">
             <a href="#forgot-password">Esqueceu a senha? Clique aqui!</a>
             <label>
@@ -61,4 +74,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Home;

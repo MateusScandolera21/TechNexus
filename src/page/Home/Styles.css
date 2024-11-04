@@ -8,6 +8,7 @@
   justify-content: space-between;
 }*/
 
+/* Botao de cadastro*/
 .signup-container {
   position: absolute;
   top: 20px;
@@ -15,7 +16,6 @@
   font-size: 0.9rem;
   color: #333;
 }
-
 .signup-container {
   display: flex;
   align-items: center;
@@ -23,31 +23,22 @@
 
 .signup-container a.signup-button {
   margin-left: 5px;
-  color: #333;
+  color: #24243E;
   text-decoration: none;
-  border: 1px solid #333;
+  border: 1px solid #24243E;
   padding: 0.3rem 0.6rem;
   border-radius: 5px;
   font-weight: bold;
 }
 
 .signup-container a.signup-button:hover {
-  background-color: #333;
+  background-color: #24243E;
   color: #fff;
 }
+/* Botao de cadastro*/
 
-/* Estilos da seção esquerda e direita */
-.login-left {
-  flex: 0 0 40%;
-  max-width: 450px;
-  background: linear-gradient(135deg, #0c6f70, #4b9474);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+
+/* Estilos da seção  direita */
 
 .login-right {
   flex: 1;
@@ -60,6 +51,35 @@
 .login-right p{
   padding-bottom: 1.5rem;
 }
+
+/* Estilos da seção  direita */
+
+/* Estilos da seção esquerda  */
+.login-left {
+  flex: 0 0 40%;
+  max-width: 450px;
+  background: 
+  linear-gradient(135deg, rgba(12, 111, 112, 0.8), rgba(75, 148, 116, 0.8)), 
+  url('../img/Technexus-05.png'); 
+  background-size: cover; 
+  background-position: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.login-left p{
+  padding: 1rem;
+}
+
+.login-left h2{
+  padding: 1.5rem;
+  font-size: 46px;
+  text-align: center;
+}
+/* Estilos da seção esquerda  */
 
 /* Restante dos estilos */
 .input-group {
