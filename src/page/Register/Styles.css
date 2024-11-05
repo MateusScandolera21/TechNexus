@@ -41,47 +41,54 @@
   background-color: transparent;
   border: 2px solid white;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: black;
   position: relative;
-  transition: all 0.4s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease-in-out;
 }
 
-.circle::before {
-  content: "";
-  width: 2px;
-  height: 30px; 
-  background-color: white;
+/* Linha de conexão entre etapas */
+.stepContainer .step:not(:last-child) .circle::after {
+  content: '';
   position: absolute;
-  top: 100%; 
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%);
+  height: calc(100% + 10px);
+  height: 33px;
+  width: 2px;
+  background-color: white; 
   z-index: -1;
-  transition: all 0.4s ease-in;
 }
 
-.circle.active::after {
-  content: "";
-  width: 20px; 
-  height: 20px;
+/* Estilos de progresso */
+.circle::before {
+  content: '';
+  width: 0;
+  height: 0;
   background-color: white;
   border-radius: 50%;
-  position: absolute;
-  z-index: 1; 
+  transition: all 0.4s ease-in-out;
+  
 }
 
-.circle.active {
-  position: relative;
+.circle.active::before,
+.circle.completed::before {
+  width: 20px; /* Bolinha branca menor */
+  height: 20px;
 }
 
-.step:last-child .circle::before {
-  display: none;
+.circle.completed {
+  background-color: white;
+}
+
+.step .circle.completed::after {
+  background-color: white; /* Linha preenchida entre etapas concluídas */
 }
 
 .step-number {
-  margin-left: 10px; 
-  color: white; 
+  margin-left: 10px;
+  color: white;
   font-size: 16px;
 }
 
@@ -91,43 +98,57 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centraliza verticalmente */
-  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; 
+  align-items: center; 
 }
 
-.main h2{
+.main h2 {
   margin-bottom: 3rem;
 }
 
 .options {
   display: flex;
-  flex-direction: column; /* Mantém os pares de input e label em coluna */
-  align-items: center; /* Centraliza os pares de input e label horizontalmente */
+  flex-direction: column; 
+  align-items: center; 
   margin: 20px 0;
 }
 
 .option {
-  display: flex; /* Permite que o input e o label fiquem lado a lado */
-  align-items: center; /* Alinha verticalmente os itens */
-  width: 100%; /* Ocupa toda a largura do contêiner pai */
-  max-width: 400px; /* Limita a largura máxima dos pares */
-  margin-bottom: 10px; /* Espaço entre os pares */
-  justify-content: flex-start; /* Alinha o conteúdo no centro horizontalmente */
+  display: flex; 
+  align-items: center; 
+  width: 100%; 
+  max-width: 400px; 
+  margin-bottom: 10px; 
+  justify-content: flex-start; 
 }
 
 .single-option {
-  margin-bottom: 20px; /* Espaço adicional abaixo do input1 para separá-lo dos outros */
+  margin-bottom: 20px; 
 }
 
-.options input[type="radio"] {
-  margin-right: 10px; /* Espaço entre o radio e o label */
-  transform: scale(1.5); /* Aumenta o tamanho do input radio, se necessário */
+input[type="radio"] {
+  margin-right: 10px; 
+  transform: scale(1.5);
 }
 
-.options label {
-  font-weight: bold;
+label {
+  font-size: larger;
   min-width: 100px; 
   text-align: left; 
+}
+
+/*Voltar para a home*/
+
+.top-left-link {
+  position: fixed;
+  top: 20px; 
+  left: calc(25% + 20px); 
+  text-decoration: none; 
+  color: #000; 
+  font-size: 1rem; 
+  display: inline-flex; 
+  align-items: center; 
+  z-index: 10; 
 }
 
 /* botao padrão*/
@@ -150,4 +171,50 @@
 button .button-text {
   flex-grow: 1; 
   text-align: left; 
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  .register-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .top-left-link {
+    left: 10px;
+  }
+
+  .stepContainer {
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .step-number {
+    font-size: 14px;
+  }
+
+  .next-button {
+    width: 90%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 1.5rem;
+  }
+
+  .next-button {
+    width: 100%;
+    padding: 0.8rem;
+  }
 }
