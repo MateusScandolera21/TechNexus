@@ -6,17 +6,9 @@ import { BsChevronBarLeft } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
 
 function RegisterPage() {
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const navigate = useNavigate();
-
-  const handleScroll = (event) => {
-    if (event.deltaY > 0 && currentStep < 4) {
-      setCurrentStep((prev) => prev + 1);
-    } else if (event.deltaY < 0 && currentStep > 0) {
-      setCurrentStep((prev) => prev - 1);
-    }
-  };
 
   const handleNext = () => {
     if (selectedOption === "contratante") {
@@ -34,7 +26,7 @@ function RegisterPage() {
       {/* Sidebar*/}
       <Sidebar currentStep={currentStep} />
 
-      <div className="main" name="Etapa 1" onWheel={handleScroll}>
+      <div className="main" name="Etapa 1">
 
         {/* Link Voltar para Página Inicial */}
         <Link to="/" className="top-left-link"><BsChevronBarLeft size={20} /> Página Inicial</Link>

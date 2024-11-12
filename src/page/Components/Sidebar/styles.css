@@ -29,12 +29,13 @@
   position: relative;
 }
 
+/* Ajuste geral do círculo */
 .circle {
   width: 50px;
   height: 50px;
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 50%;
+  background-color: transparent; /* Sem fundo */
+  border: 2px solid white; /* Borda padrão */
+  border-radius: 50%; /* Círculo perfeito */
   position: relative;
   display: flex;
   justify-content: center;
@@ -42,83 +43,94 @@
   transition: all 0.4s ease-in-out;
 }
 
+/* Estilo do círculo da etapa ativa (etapa atual) */
+.circle.active {
+  background-color: transparent; /* Sem fundo */
+  border: 2px solid white; /* Borda branca */
+}
+
+.circle.active::before {
+  content: '';
+  width: 12px; /* Tamanho da bolinha centralizada */
+  height: 12px;
+  background-color: white; /* Cor da bolinha */
+  border-radius: 50%;
+}
+
+/* Estilo do círculo para etapas completadas */
+.circle.completed {
+  background-color: transparent; /* Sem fundo */
+  border-color: #0C6F70; /* Borda azul */
+}
+
+/* Icone dentro do círculo (quando completado) */
+.circle.completed .check-icon {
+  font-family: 'Font Awesome 5 Free'; /* Usando FontAwesome */
+  font-weight: 900; /* Peso para o ícone */
+  color: #0C6F70; /* Cor azul */
+  font-size: 24px; /* Tamanho adequado do ícone */
+  line-height: 1; /* Alinha o ícone */
+  background-color: transparent; /* Fundo transparente para o ícone */
+  position: absolute; /* Posiciona o ícone no centro do círculo */
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste para centralizar o ícone */
+}
+
+
+
 /* Linha de conexão entre etapas */
 .stepContainer .step:not(:last-child) .circle::after {
   content: '';
   position: absolute;
   top: 100%;
   left: 50%;
-  height: calc(100% + 10px);
   height: 33px;
   width: 2px;
-  background-color: white; 
+  background-color: white;
   z-index: -1;
+  transform: translateX(-50%);
 }
 
-/* Estilos de progresso */
-.circle::before {
-  content: '';
-  width: 0;
-  height: 0;
-  background-color: white;
-  border-radius: 50%;
-  transition: all 0.4s ease-in-out;
-  
-}
-
-.circle.active::before,
-.circle.completed::before {
-  width: 20px; /* Bolinha branca menor */
-  height: 20px;
-}
-
-.circle.completed {
-  background-color: white;
-}
-
-.step .circle.completed::after {
-  background-color: white; /* Linha preenchida entre etapas concluídas */
-}
-
+/* Estilo do texto da etapa */
 .step-number {
   margin-left: 10px;
   color: white;
   font-size: 16px;
 }
 
-/* Ajuste para telas médias (entre tablet e desktop) */
+/* Ajustes para telas médias */
 @media (max-width: 1024px) {
   .sidebar {
-    width: 100%; /* Ocupa a largura total da tela */
+    width: 100%;
     max-width: none;
     flex-direction: row;
     justify-content: space-around;
     padding: 1.5rem;
-    position: fixed; /* Fixa a sidebar no topo */
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 10; /* Garante que a sidebar fique sobre outros elementos */
+    z-index: 10;
   }
 
   .stepContainer {
-    flex-direction: row; /* Exibe o conteúdo da stepContainer em linha */
+    flex-direction: row;
     gap: 1rem;
     padding: 1rem 0;
   }
 
   .step {
-    flex-direction: column; /* Coloca o texto abaixo do círculo */
+    flex-direction: column;
     align-items: center;
   }
 
-  /* Estilos para linha de conexão horizontal entre etapas */
   .stepContainer .step:not(:last-child) .circle::after {
     content: '';
     position: absolute;
-    left: 100%; /* Coloca a linha à direita do círculo */
+    left: 100%;
     top: 50%;
-    width: 33px; /* Comprimento da linha */
-    height: 2px; /* Altura da linha */
+    width: 33px;
+    height: 2px;
     background-color: white;
     z-index: -1;
     transform: translateY(-50%);
@@ -132,15 +144,12 @@
   .step-number {
     font-size: 14px;
   }
-
 }
 
-
-
-/* Ajuste para tablets */
+/* Ajustes para tablets */
 @media (max-width: 768px) {
   .sidebar {
-    display: none; /* Esconde a sidebar em dispositivos pequenos */
+    display: none;
   }
 
   .stepContainer {
@@ -156,12 +165,10 @@
   .step-number {
     font-size: 14px;
   }
-
 }
 
-/* Ajuste para telas pequenas (smartphones) */
+/* Ajustes para telas pequenas */
 @media (max-width: 480px) {
-
   .step-number {
     font-size: 12px;
   }
