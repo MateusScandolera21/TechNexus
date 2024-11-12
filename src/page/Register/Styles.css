@@ -174,14 +174,102 @@ button .button-text {
 }
 
 /* Responsividade */
+/* Ajuste para telas de largura maior */
+@media (min-width: 1400px) {
+  .sidebar {
+    max-width: 400px;
+    padding: 2rem;
+  }
 
+  .stepContainer {
+    padding: 3rem 0;
+  }
+
+  .next-button {
+    max-width: 700px;
+    padding: 1.2rem;
+  }
+
+  .option, .single-option {
+    max-width: 500px;
+  }
+
+  .top-left-link {
+    left: calc(29% + 20px);
+  }
+}
+
+/* Ajuste para telas médias (entre tablet e desktop) */
+@media (max-width: 1024px) {
+  .register-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 100%; /* Ocupa a largura total da tela */
+    max-width: none;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1.5rem;
+    position: fixed; /* Fixa a sidebar no topo */
+    top: 0;
+    left: 0;
+    z-index: 10; /* Garante que a sidebar fique sobre outros elementos */
+  }
+
+  .stepContainer {
+    flex-direction: row; /* Exibe o conteúdo da stepContainer em linha */
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .step {
+    flex-direction: column; /* Coloca o texto abaixo do círculo */
+    align-items: center;
+  }
+
+  /* Estilos para linha de conexão horizontal entre etapas */
+  .stepContainer .step:not(:last-child) .circle::after {
+    content: '';
+    position: absolute;
+    left: 100%; /* Coloca a linha à direita do círculo */
+    top: 50%;
+    width: 33px; /* Comprimento da linha */
+    height: 2px; /* Altura da linha */
+    background-color: white;
+    z-index: -1;
+    transform: translateY(-50%);
+  }
+
+  .circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .step-number {
+    font-size: 14px;
+  }
+
+  .main {
+    padding: 1.5rem;
+  }
+
+  .next-button {
+    width: 80%;
+  }
+}
+
+
+
+/* Ajuste para tablets */
 @media (max-width: 768px) {
   .register-container {
     flex-direction: column;
   }
 
   .sidebar {
-    display: none;
+    display: none; /* Esconde a sidebar em dispositivos pequenos */
   }
 
   .top-left-link {
@@ -206,15 +294,29 @@ button .button-text {
     width: 90%;
     padding: 1rem;
   }
+
+  .top-left-link {
+    left: calc(29% + 20px);
+  }
 }
 
+/* Ajuste para telas pequenas (smartphones) */
 @media (max-width: 480px) {
   .main {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .next-button {
     width: 100%;
     padding: 0.8rem;
   }
+
+  .step-number {
+    font-size: 12px;
+  }
+
+  label {
+    font-size: 1rem;
+  }
 }
+

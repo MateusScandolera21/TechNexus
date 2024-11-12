@@ -26,11 +26,7 @@ const Home = () => {
           <p>
             Aqui, networking é mais do que um encontro de
             interesses; é a fundação para as inovações que transformam o mundo.
-          </p>
-          <p>
             Quando talentos e conhecimentos se unem, o impossível torna-se possível.
-          </p>
-          <p>
             Somos a ponte que conecta talentos, o catalisador que promove o crescimento, e a
             plataforma que facilita o progresso.
           </p>
@@ -63,7 +59,7 @@ const Home = () => {
           </button>
 
           <div className="options">
-            <a href="#forgot-password">Esqueceu a senha? Clique aqui!</a>
+            {/*<a href="#forgot-password">Esqueceu a senha? Clique aqui!</a>*/}
             <label>
               <input type="checkbox" /> Mantenha-me Conectado
             </label>
