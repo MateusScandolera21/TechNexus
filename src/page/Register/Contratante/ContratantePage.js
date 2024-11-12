@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import './Styles.css';
-import Sidebar from '../Components/Sidebar/Sidebar';
+import './styles.css';
 import { BsArrowBarRight } from "react-icons/bs";
 import { BsChevronBarLeft } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
 
-function RegisterPage() {
+function ContratantePage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const navigate = useNavigate();
@@ -31,40 +30,29 @@ function RegisterPage() {
   return (
     <div className="register-container"> 
 
-      {/* Sidebar*/}
-      <Sidebar currentStep={currentStep} />
+      {/* Sidebar Etapa */}
+      <div className="sidebar">
+        <div className="logo">
+          <h1>TechNexus</h1>
+        </div>
+        <div className="stepContainer">
+          {[...Array(5)].map((_, index) => (
+            <div className="step" key={index}>
+              <div className={`circle ${index <= currentStep ? 'active' : ''}`}>
+                {index === currentStep && <div className="inner-circle"></div>}
+              </div>
+              <span className="step-number">Etapa {index + 1}</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <div className="main" name="Etapa 1" onWheel={handleScroll}>
 
         {/* Link Voltar para Página Inicial */}
         <Link to="/" className="top-left-link"><BsChevronBarLeft size={20} /> Página Inicial</Link>
 
-        <h2>Gostaria de se Cadastrar como:</h2>
-        <div className="container-option">
-          <div className="option single-option">
-            <input
-              type="radio"
-              id="input1"
-              name="options"
-              value="contratante"
-              onChange={(e) => setSelectedOption(e.target.value)}
-            />
-            <label htmlFor="input1"> CONTRATANTE</label>
-          </div>
-
-          <div className="option group-options">
-            <div className="option">
-              <input
-                type="radio"
-                id="option2"
-                name="options"
-                value="prestador"
-                onChange={(e) => setSelectedOption(e.target.value)}
-              />
-              <label htmlFor="option2">PRESTADOR DE SERVIÇOS</label>
-            </div>
-          </div>
-        </div>
+       
 
         <button type="submit" onClick={handleNext}>
           <span className="button-text">Proxima Etapa</span>
@@ -75,4 +63,4 @@ function RegisterPage() {
   );
 }
 
-export default RegisterPage;
+export default ContratantePage;

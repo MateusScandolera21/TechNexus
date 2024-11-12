@@ -4,6 +4,94 @@
   position: relative;
 }
 
+.sidebar {
+  flex: 0 0 30%;
+  max-width: 450px;
+  background: linear-gradient(
+    135deg,
+    rgba(12, 111, 112, 0.8),
+    rgba(75, 148, 116, 0.8),
+    rgba(12, 111, 112, 0.8)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.88rem;
+  justify-content: center;
+  padding: 2rem 0;
+  isolation: isolate;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Linha de conexão entre etapas */
+.stepContainer .step:not(:last-child) .circle::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  height: calc(100% + 10px);
+  height: 33px;
+  width: 2px;
+  background-color: white; 
+  z-index: -1;
+}
+
+/* Estilos de progresso */
+.circle::before {
+  content: '';
+  width: 0;
+  height: 0;
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.4s ease-in-out;
+  
+}
+
+.circle.active::before,
+.circle.completed::before {
+  width: 20px; /* Bolinha branca menor */
+  height: 20px;
+}
+
+.circle.completed {
+  background-color: white;
+}
+
+.step .circle.completed::after {
+  background-color: white; /* Linha preenchida entre etapas concluídas */
+}
+
+.step-number {
+  margin-left: 10px;
+  color: white;
+  font-size: 16px;
+}
+
 /*Main*/
 
 .main {

@@ -42,14 +42,22 @@ const Home = () => {
             <label htmlFor="email"/>
             <div className="input-icon">
               <BsEnvelope className="icon" />
-              <input type="email" placeholder="Digite Seu Email" />
+              <input 
+              type="email" 
+              name="email"
+              placeholder="Digite Seu Email" 
+              />
             </div>
           </div>
           <div className="input-group">
             <label htmlFor="password"/>
             <div className="input-icon">
               <BsLock className="icon" />
-              <input type="password" id="password" placeholder="********" />
+              <input 
+              type="password" 
+              id="password" 
+              placeholder="********"
+              />
             </div>
           </div>
           

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import './Styles.css';
-import Sidebar from '../Components/Sidebar/Sidebar';
+import './Style.css';
+import Sidebar from '../../Components/Sidebar/Sidebar';
 import { BsArrowBarRight } from "react-icons/bs";
 import { BsChevronBarLeft } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
@@ -33,6 +33,7 @@ function RegisterPage() {
 
       {/* Sidebar*/}
       <Sidebar currentStep={currentStep} />
+      
 
       <div className="main" name="Etapa 1" onWheel={handleScroll}>
 
