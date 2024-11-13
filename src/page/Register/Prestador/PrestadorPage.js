@@ -6,7 +6,7 @@ import { BsChevronBarLeft } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
 
 function RegisterPage() {
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep, ] = useState(1);
   const [selectedOption, setSelectedOption] = useState(null);
   const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ function RegisterPage() {
     <div className="register-container"> 
 
       {/* Sidebar*/}
-      <Sidebar currentStep={currentStep} />
+      <Sidebar currentStep={currentStep} alwaysCompleteFirstStep={true} />
       
 
       <div className="main" name="Etapa 1" onWheel={handleScroll}>

@@ -4,6 +4,7 @@ import { BsArrowBarRight } from "react-icons/bs";
 import { BsEnvelope } from "react-icons/bs";
 import { BsLock } from "react-icons/bs";
 import { Link } from 'react-router-dom';
+import ImgLogo from '../img/Ativo 1.svg';
 
 
 const Home = () => {
@@ -17,8 +18,8 @@ const Home = () => {
 
       {/* Informações */}
       <div className="login-left">
-        <div className="login-logo">
-        <h1>Logo</h1>
+        <div className="logo">
+            <img src={ImgLogo} alt="TechNexus Logo" className="logo-image" />
         </div>
         <div className="login-message">
           <h2>Oportunidades</h2>

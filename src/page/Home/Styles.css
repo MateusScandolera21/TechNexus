@@ -2,11 +2,11 @@
   display: flex;
   height: 100vh;
   position: relative;
+  gap: 2rem;
 }
-/*.login-logo{
-  display: flex;
-  justify-content: space-between;
-}*/
+.logo{
+  padding-bottom: 7rem;
+}
 
 /* Botao de cadastro*/
 .signup-container {
@@ -15,6 +15,7 @@
   right: 20px;
   font-size: 0.9rem;
   color: #333;
+  margin-bottom: 2rem;
 }
 .signup-container {
   display: flex;
@@ -72,6 +73,7 @@
 .login-left p{
   padding: 0 1rem;
   margin: 0.5rem 1rem;
+  padding-top: 2rem;
 }
 
 .login-left h2{
@@ -79,6 +81,7 @@
   font-size: 46px;
   text-align: left;
 }
+
 /* Estilos da seção esquerda  */
 
 /* Restante dos estilos */

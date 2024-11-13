@@ -3,10 +3,11 @@ import './styles.css';
 import { BsArrowBarRight } from "react-icons/bs";
 import { BsChevronBarLeft } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
+import Sidebar from '../../Components/Sidebar/Sidebar';
 
 function ContratantePage() {
-  const [currentStep, setCurrentStep] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [selectedOption] = useState(null);
   const navigate = useNavigate();
 
   const handleScroll = (event) => {
@@ -30,22 +31,8 @@ function ContratantePage() {
   return (
     <div className="register-container"> 
 
-      {/* Sidebar Etapa */}
-      <div className="sidebar">
-        <div className="logo">
-          <h1>TechNexus</h1>
-        </div>
-        <div className="stepContainer">
-          {[...Array(5)].map((_, index) => (
-            <div className="step" key={index}>
-              <div className={`circle ${index <= currentStep ? 'active' : ''}`}>
-                {index === currentStep && <div className="inner-circle"></div>}
-              </div>
-              <span className="step-number">Etapa {index + 1}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Sidebar*/}
+      <Sidebar currentStep={currentStep} alwaysCompleteFirstStep={true} />
 
       <div className="main" name="Etapa 1" onWheel={handleScroll}>
 
