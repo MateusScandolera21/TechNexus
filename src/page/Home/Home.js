@@ -18,17 +18,14 @@ const Home = () => {
       {/* Informações */}
       <div className="login-left">
         <div className="login-logo">
-          <div className="logo-placeholder">Logo</div>
-          <h1>TecNexus</h1>
+        <h1>Logo</h1>
         </div>
         <div className="login-message">
-          <h2>Oportunidades de Crescimento Profissional</h2>
+          <h2>Oportunidades</h2>
+          <h2>de Crescimento Profissional</h2>
           <p>
             Aqui, networking é mais do que um encontro de
             interesses; é a fundação para as inovações que transformam o mundo.
-            Quando talentos e conhecimentos se unem, o impossível torna-se possível.
-            Somos a ponte que conecta talentos, o catalisador que promove o crescimento, e a
-            plataforma que facilita o progresso.
           </p>
         </div>
       </div>

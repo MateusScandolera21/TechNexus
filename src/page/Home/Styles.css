@@ -52,7 +52,6 @@
   padding-bottom: 1.5rem;
 }
 
-/* Estilos da seção  direita */
 
 /* Estilos da seção esquerda  */
 .login-left {
@@ -68,16 +67,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
 }
 .login-left p{
-  padding: 1rem;
+  padding: 0 1rem;
+  margin: 0.5rem 1rem;
 }
 
 .login-left h2{
-  padding: 1.5rem;
+  padding: 0.1rem 1.5rem;
   font-size: 46px;
-  text-align: center;
+  text-align: left;
 }
 /* Estilos da seção esquerda  */
 

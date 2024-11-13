@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Styles.css';
+import './Register.css';
 import Sidebar from '../Components/Sidebar/Sidebar';
 import { BsArrowBarRight } from "react-icons/bs";
 import { BsChevronBarLeft } from "react-icons/bs";
