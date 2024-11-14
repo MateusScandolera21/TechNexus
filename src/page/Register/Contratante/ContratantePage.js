@@ -37,8 +37,8 @@ function ContratantePage() {
       <div className="main" name="Etapa 1" onWheel={handleScroll}>
 
         {/* Link Voltar para Página Inicial */}
-        <Link to="/" className="top-left-link"><BsChevronBarLeft size={20} /> Página Inicial</Link>
-
+        <Link to="/register" className="top-left-link"><BsChevronBarLeft size={20} /> Página Inicial</Link>
+          CONTRATANTE
        
 
         <button type="submit" onClick={handleNext}>

@@ -1,11 +1,12 @@
 .sidebar {
   flex: 0 0 30%;
   max-width: 450px;
-  background: linear-gradient(
-    135deg,
-    rgba(12, 111, 112, 0.8),
-    rgba(75, 148, 116, 0.8),
-    rgba(12, 111, 112, 0.8)
+  background: 
+  linear-gradient(
+    0deg,
+  #415C55 0%,
+  #41AC8F 49%,
+  #273330 100%
   );
   display: flex;
   flex-direction: column;
@@ -15,9 +16,10 @@
 }
 
 .logo-image {
-  width: 23rem; /* Ajuste o tamanho conforme necessário */
-  height: auto;
-  margin: 0;
+  width: 100%; /* A imagem ocupará 100% do contêiner pai */
+  max-width: 20rem; /* Limita a largura máxima para evitar que fique muito grande em telas maiores */
+  height: auto; /* Mantém a proporção original da imagem */
+  margin: 0 auto; /* Centraliza a imagem horizontalmente */
   padding: 0;
 }
 

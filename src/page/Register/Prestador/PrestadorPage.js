@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function RegisterPage() {
   const [currentStep, setCurrentStep, ] = useState(1);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption] = useState(null);
   const navigate = useNavigate();
 
   const handleScroll = (event) => {
@@ -38,33 +38,10 @@ function RegisterPage() {
       <div className="main" name="Etapa 1" onWheel={handleScroll}>
 
         {/* Link Voltar para Página Inicial */}
-        <Link to="/" className="top-left-link"><BsChevronBarLeft size={20} /> Página Inicial</Link>
+        <Link to="/register" className="top-left-link"><BsChevronBarLeft size={20} /> Etapa Anterior</Link>
 
-        <h2>Gostaria de se Cadastrar como:</h2>
         <div className="container-option">
-          <div className="option single-option">
-            <input
-              type="radio"
-              id="input1"
-              name="options"
-              value="contratante"
-              onChange={(e) => setSelectedOption(e.target.value)}
-            />
-            <label htmlFor="input1"> CONTRATANTE</label>
-          </div>
-
-          <div className="option group-options">
-            <div className="option">
-              <input
-                type="radio"
-                id="option2"
-                name="options"
-                value="prestador"
-                onChange={(e) => setSelectedOption(e.target.value)}
-              />
-              <label htmlFor="option2">PRESTADOR DE SERVIÇOS</label>
-            </div>
-          </div>
+        Profissional 
         </div>
 
         <button type="submit" onClick={handleNext}>

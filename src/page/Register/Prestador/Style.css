@@ -7,11 +7,12 @@
 .sidebar {
   flex: 0 0 30%;
   max-width: 450px;
-  background: linear-gradient(
-    135deg,
-    rgba(12, 111, 112, 0.8),
-    rgba(75, 148, 116, 0.8),
-    rgba(12, 111, 112, 0.8)
+  background: 
+  linear-gradient(
+    0deg,
+  #415C55 0%,
+  #41AC8F 49%,
+  #273330 100%
   );
   display: flex;
   flex-direction: column;

@@ -53,7 +53,7 @@ function RegisterPage() {
                 value="prestador"
                 onChange={(e) => setSelectedOption(e.target.value)}
               />
-              <label htmlFor="option2">PRESTADOR DE SERVIÇOS</label>
+              <label htmlFor="option2">PROFISSIONAL</label>
             </div>
           </div>
         </div>
