@@ -38,48 +38,52 @@
 
 /* Botão Cadastro */
 
+#button .button-text {
+  flex-grow: 1; 
+  color: #fff;
+  text-align: left; 
+}
 
 /* Informação Sidebar */
 
 .logo{
-  padding-bottom: 7rem;
+  margin-bottom: 2rem;
+  transform: scale(1.5);
 }
 
 .login-left {
   flex: 0 0 40%;
   max-width: 450px;
   background: 
-    linear-gradient(
-      0deg,
-      #415C55 0%,
-      #41AC8F 49%,
-      #273330 100%
-    ), 
-    url('../img/Technexus-05.png'); 
+  linear-gradient(180deg,
+   #415C55 0%,
+   #41AC8F 48.52%,
+   #273330 100%
+   );
   background-size: cover;
   background-position: center;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Mantém a logo no topo */
-  text-align: center;
+  justify-content: center;
   padding: 2rem 1rem;
 }
 
-.login-left p{
-  padding: 0;
-  margin: 1rem 0.5rem 0 0;
-  padding-top: 2rem;
-  text-align: left;
+.Text-Principal {
+  color: #DBD8D8;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 2.929375rem; 
+  width: 254px;  
+  height: auto;  
+  flex-shrink: 0;
+  display: flex;
+  white-space: normal; 
 }
 
-.Text-Principal {
-  margin-top: auto; /* Empurra o título para o centro */
-  margin-bottom: auto;
-  font-size: 2rem;
-  text-align: left;
-}
+
 
 /* Informação Sidebar */
 
@@ -132,27 +136,6 @@
   font-size: 0.9rem;
   color: #333;
 }
-
-button {
-  width: 31.25rem;
-  max-width: 800px;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  background-color: #24243E;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-}
-
-button .button-text {
-  flex-grow: 1; 
-  text-align: left; 
-}
-
 
 
 .options {

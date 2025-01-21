@@ -7,7 +7,8 @@
   #415C55 0%,
   #41AC8F 49%,
   #273330 100%
-  );
+  ),
+  url('../../img/Technexus-02.png'); 
   display: flex;
   flex-direction: column;
   justify-content: center;

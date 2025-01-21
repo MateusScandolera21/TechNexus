@@ -1,10 +1,10 @@
 import React from 'react';
 import './Styles.css';
-import { BsArrowBarRight } from "react-icons/bs";
+import Button from "../Components/button/button";
 import { BsEnvelope } from "react-icons/bs";
 import { BsLock } from "react-icons/bs";
 import { Link } from 'react-router-dom';
-import ImgLogo from '../img/Ativo 1.svg';
+import ImgLogo from '../img/Technexus-02.png';
 
 const Home = () => {
   return (
@@ -24,13 +24,8 @@ const Home = () => {
           </div>
           <div className="login-message">
             <div className="Text-Principal">
-              <h2>Oportunidades</h2>
-              <h2>de Crescimento Profissional</h2>
+              <h2>Oportunidades de Crescimento Profissional</h2>
             </div>
-            <p>
-              Aqui, networking é mais do que um encontro de
-              interesses; é a fundação para as inovações que transformam o mundo.
-            </p>
           </div>
         </div>
 
@@ -62,11 +57,8 @@ const Home = () => {
               </div>
             </div>
           
-            <button type="submit">
-              <span className="button-text">Entrar</span>
-              <BsArrowBarRight size={20} className='button-icon'/>
-            </button>
-
+            <Button text="Entrar"/>
+              
             <div className="options">
               {/*<a href="#forgot-password">Esqueceu a senha? Clique aqui!</a>*/}
               <label>

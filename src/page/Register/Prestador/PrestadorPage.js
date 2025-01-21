@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './Style.css';
 import Sidebar from '../../Components/Sidebar/Sidebar';
-import { BsArrowBarRight } from "react-icons/bs";
+import Button from '../../Components/button/button'
 import { BsChevronBarLeft } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -41,13 +41,11 @@ function RegisterPage() {
         <Link to="/register" className="top-left-link"><BsChevronBarLeft size={20} /> Etapa Anterior</Link>
 
         <div className="container-option">
-        Profissional 
+          Profissional 
         </div>
 
-        <button type="submit" onClick={handleNext}>
-          <span className="button-text">Proxima Etapa</span>
-          <BsArrowBarRight size={20} className="button-icon" />
-        </button>
+        <Button onClick={handleNext} text="Proximo" />
+
       </div>
     </div>
   );
