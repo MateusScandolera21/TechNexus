@@ -1,24 +1,17 @@
 .login-container {
   display: flex;
   height: 100vh;
-  position: relative;
   gap: 2rem;
 }
 
-/* Botao Cadastro */
-
+/* Botão Cadastro */
 .signup-container {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 0.9rem;
-  color: #333;
-  margin-bottom: 2rem;
-}
-
-.signup-container {
   display: flex;
   align-items: center;
+  font-size: 0.9rem;
 }
 
 .signup-container a.signup-button {
@@ -36,17 +29,8 @@
   color: #fff;
 }
 
-/* Botão Cadastro */
-
-#button .button-text {
-  flex-grow: 1; 
-  color: #fff;
-  text-align: left; 
-}
-
 /* Informação Sidebar */
-
-.logo{
+.logo {
   margin-bottom: 2rem;
   transform: scale(1.5);
 }
@@ -54,14 +38,7 @@
 .login-left {
   flex: 0 0 40%;
   max-width: 450px;
-  background: 
-  linear-gradient(180deg,
-   #415C55 0%,
-   #41AC8F 48.52%,
-   #273330 100%
-   );
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(180deg, #415C55 0%, #41AC8F 48.52%, #273330 100%);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -73,22 +50,12 @@
 .Text-Principal {
   color: #DBD8D8;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 900;
-  line-height: 2.929375rem; 
-  width: 254px;  
-  height: auto;  
-  flex-shrink: 0;
-  display: flex;
-  white-space: normal; 
+  line-height: 2.9rem;
+  text-align: center;
 }
 
-
-
-/* Informação Sidebar */
-
 /* Login */
-
 .login-right {
   flex: 1;
   display: flex;
@@ -97,15 +64,11 @@
   align-items: center;
 }
 
-.login-right p{
-  padding-bottom: 1.5rem;
-}
-
 .input-group {
- width: 31.25rem;
- max-width: 800px; 
- margin-bottom: 1rem; 
- position: relative;
+  width: 31.25rem;
+  max-width: 800px;
+  margin-bottom: 1rem;
+  position: relative;
 }
 
 .input-icon {
@@ -114,29 +77,21 @@
 
 .input-icon .icon {
   position: absolute;
-  left: 10px; 
+  left: 15px; 
   top: 50%;
   transform: translateY(-50%); 
   color: #333;
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
 }
 
 .input-icon input {
   width: 100%;
   padding: 1.5rem;
-  padding-left: 2.5rem; 
+  padding-left: 3rem; 
   border-radius: 4px;
   border: 1px solid #ddd;
   font-size: 1rem;
 }
-
-.input-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  color: #333;
-}
-
 
 .options {
   display: flex;
@@ -147,87 +102,41 @@
   margin-top: 1rem;
 }
 
-.options a {
-  color: #333;
-  text-decoration: none;
-}
-
-
-/* Ajustes de Responsividade */
-
-/* Pequenos dispositivos (celulares) */
+/* Responsividade */
 @media (max-width: 480px) {
   .login-container {
     flex-direction: column;
-    padding: auto;
   }
 
   .login-left, .login-right {
     width: 100%;
-    max-width: none;
-    padding: 0.5rem;
+    padding: 1rem;
   }
 
   .input-group {
     width: 90%;
-    margin: 0 auto;
-    text-align: center;
-    padding-bottom: 10px;
   }
 
   button {
     width: 90%;
-    margin: 0 auto;
-    padding: 0.5rem;
-  }
-
-  .button-icon {
-    display: none;
-  }
-
-  .signup-container {
-    font-size: 0.8rem;
-    padding-bottom: 10px;
-  }
-
-  .options {
-    font-size: 0.7rem;
-    padding: 0 1rem;
-    margin: 0 auto;
-  }
-
-  .signup-container p {
-    display: none;
   }
 
   .signup-container a.signup-button {
-    border: 1px solid white;
+    border-color: white;
     color: white;
   }
 }
 
-/* Dispositivos Médios (tablets) */
 @media (max-width: 768px) {
   .login-left, .login-right {
     padding: 1rem;
-    width: 100%;
   }
 
-  .signup-container {
-    font-size: 0.9rem;
-  }
-
-  .login-left h2 {
-    font-size: 2.0rem;
-  }
-
-  .input-group, button {
+  .input-group {
     max-width: 600px;
-    padding: 1rem;
   }
 }
 
-/* Telas grandes (desktops e telas grandes) */
 @media (min-width: 1200px) {
   .login-container {
     gap: 3rem;
@@ -237,23 +146,7 @@
     flex: 0 0 35%;
   }
 
-  .input-group, button{
-    max-width: 600px;
-    
-  }
-
-  .Text-Principal{
+  .Text-Principal {
     font-size: 2rem;
-    padding-bottom: 1rem;
-  }
-
-  .options {
-    max-width: 600px;
-    font-size: 0.85rem;
-  }
-
-  .logo{
-    margin: 0px;
-    padding-bottom: 50px;
   }
 }

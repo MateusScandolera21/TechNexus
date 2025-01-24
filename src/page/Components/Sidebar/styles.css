@@ -1,188 +1,44 @@
+/* Sidebar.css */
 .sidebar {
   flex: 0 0 30%;
   max-width: 450px;
   background: 
-  linear-gradient(
-    0deg,
-  #415C55 0%,
-  #41AC8F 49%,
-  #273330 100%
-  ),
-  url('../../img/Technexus-02.png'); 
+    linear-gradient(
+      180deg, 
+      #415C55 0%, 
+      #41AC8F 48.52%, 
+      #273330 100%
+    ),
+    url('../../img/Technexus-02.svg'); 
+  background-size: cover; /* Faz a imagem cobrir todo o espaço */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 1rem;
 }
 
 .logo-image {
-  width: 100%; /* A imagem ocupará 100% do contêiner pai */
-  max-width: 20rem; /* Limita a largura máxima para evitar que fique muito grande em telas maiores */
-  height: auto; /* Mantém a proporção original da imagem */
-  margin: 0 auto; /* Centraliza a imagem horizontalmente */
-  padding: 0;
+  width: 15.625rem;
+  height: 127px;
+  flex-shrink: 0;
 }
 
-.stepContainer {
-  display: flex;
+.Text-Principal {
+  color: #DBD8D8;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 46px; 
   flex-direction: column;
-  gap: 1.88rem;
   justify-content: center;
-  padding: 2rem 0;
-  isolation: isolate;
-}
-
-.step {
+  width: 274px;
+  height: 157px;
   display: flex;
-  align-items: center;
-  position: relative;
-}
-
-/* Ajuste geral do círculo */
-.circle {
-  width: 50px;
-  height: 50px;
-  background-color: transparent; /* Sem fundo */
-  border: 2px solid white; /* Borda padrão */
-  border-radius: 50%; /* Círculo perfeito */
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.4s ease-in-out;
-}
-
-/* Estilo do círculo da etapa ativa (etapa atual) */
-.circle.active {
-  background-color: transparent; /* Sem fundo */
-  border: 2px solid white; /* Borda branca */
-}
-
-.circle.active::before {
-  content: '';
-  width: 12px; /* Tamanho da bolinha centralizada */
-  height: 12px;
-  background-color: white; /* Cor da bolinha */
-  border-radius: 50%;
-}
-
-/* Estilo do círculo para etapas completadas */
-.circle.completed {
-  
-  border-color: #0C6F70; /* Borda azul */
-}
-
-/* Icone dentro do círculo (quando completado) */
-.circle.completed .check-icon {
-  font-family: 'Font Awesome 5 Free'; /* Usando FontAwesome */
-  font-weight: 900; /* Peso para o ícone */
-  color: #0C6F70; /* Cor azul */
-  font-size: 30px; /* Tamanho adequado do ícone */
-  line-height: 1; /* Alinha o ícone */
-  position: absolute; /* Posiciona o ícone no centro do círculo */
-  top: 50%; /* Centraliza verticalmente */
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translate(-50%, -50%); /* Ajuste para centralizar o ícone */
-}
-
-
-
-/* Linha de conexão entre etapas */
-.stepContainer .step:not(:last-child) .circle::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  height: 33px;
-  width: 2px;
-  background-color: white;
-  z-index: -1;
-  transform: translateX(-50%);
-}
-
-/* Estilo do texto da etapa */
-.step-number {
-  margin-left: 10px;
-  color: white;
-  font-size: 16px;
-}
-
-/* Ajustes para telas médias */
-@media (max-width: 1024px) {
-  .sidebar {
-    width: 100%;
-    max-width: none;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 1.5rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-  }
-
-  .stepContainer {
-    flex-direction: row;
-    gap: 1rem;
-    padding: 1rem 0;
-  }
-
-  .step {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .stepContainer .step:not(:last-child) .circle::after {
-    content: '';
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    width: 33px;
-    height: 2px;
-    background-color: white;
-    z-index: -1;
-    transform: translateY(-50%);
-  }
-
-  .circle {
-    width: 40px;
-    height: 40px;
-  }
-
-  .step-number {
-    font-size: 14px;
-  }
-}
-
-/* Ajustes para tablets */
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-
-  .stepContainer {
-    gap: 1rem;
-    padding: 1rem 0;
-  }
-
-  .circle {
-    width: 40px;
-    height: 40px;
-  }
-
-  .step-number {
-    font-size: 14px;
-  }
-}
-
-/* Ajustes para telas pequenas */
-@media (max-width: 480px) {
-  .step-number {
-    font-size: 12px;
-  }
-
-  label {
-    font-size: 1rem;
-  }
+  text-align: left;
+  flex-shrink: 0;
+  margin-left: 1.8rem;
 }
