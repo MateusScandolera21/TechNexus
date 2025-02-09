@@ -10,9 +10,9 @@
       #273330 100%
     ),
     url('../../img/Technexus-02.svg'); 
-  background-size: cover; /* Faz a imagem cobrir todo o espaço */
-  background-position: center; /* Centraliza a imagem */
-  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
   display: flex;
   flex-direction: column;
   justify-content: center;

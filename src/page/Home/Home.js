@@ -36,6 +36,7 @@ const Home = () => {
               />
             </div>
           </div>
+          
           <div className="input-group">
             <label htmlFor="password" />
             <div className="input-icon">
