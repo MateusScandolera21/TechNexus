@@ -1,13 +1,21 @@
-import React from 'react';
+import { React, useState} from 'react';
 import './Styles.css';
-import Button from "../Components/button/button";
-import Sidebar from "../Components/Sidebar/Sidebar";
+import { Link } from 'react-router-dom';
+
+import Button from "../../Components/button/button";
+import Sidebar from "../../Components/Sidebar/Sidebar";
+
 import { BsEnvelope } from "react-icons/bs";
 import { BsLock } from "react-icons/bs";
-import { Link } from 'react-router-dom';
+import { BsEyeSlash } from "react-icons/bs";
+import { BsEye } from "react-icons/bs";
+
 
 
 const Home = () => {
+
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
   return (
     <div className="login-container">
 
@@ -24,6 +32,7 @@ const Home = () => {
       <div className="login-right">
         <h2>Bem-Vindo(a)</h2>
         <p>FAÇA LOGIN PARA CONTINUAR</p>
+
         <form>
           <div className="input-group">
             <label htmlFor="email" />
@@ -32,7 +41,7 @@ const Home = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="Digite Seu Email"
+                placeholder="Digite Seu Email"               
               />
             </div>
           </div>
@@ -40,14 +49,28 @@ const Home = () => {
           <div className="input-group">
             <label htmlFor="password" />
             <div className="input-icon">
+
               <BsLock className="icon" />
+
               <input
-                type="password"
+                type={isPasswordVisible ? 'text' : 'password'}
                 id="password"
-                placeholder="********"
+                placeholder="********"               
               />
+
+              <button type="button" className="eye-button" onClick={() => setIsPasswordVisible(!isPasswordVisible)}>
+                {isPasswordVisible ? (
+                  <BsEye className="icon-password"/>
+                ) : (
+                  <BsEyeSlash className="icon-password"/>
+                )}
+                
+
+              </button>
+
             </div>
           </div>
+
 
           <Button text="Entrar" />
 
@@ -56,6 +79,7 @@ const Home = () => {
               <input type="checkbox" /> Mantenha-me Conectado
             </label>
           </div>
+
         </form>
       </div>
     </div>

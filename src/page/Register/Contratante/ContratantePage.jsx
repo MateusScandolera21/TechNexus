@@ -1,44 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
-import Button from "../../Components/button/button";
+
+import Button from "../../../Components/button/button";
+import Sidebar from "../../../Components/Sidebar/Sidebar";
+
 import { BsChevronBarLeft } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
-import Sidebar from "../../Components/Sidebar/Sidebar";
 import { BsEnvelopeAt } from "react-icons/bs";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { BsGlobe } from "react-icons/bs";
 
-
-
 function ContratantePage() {
+
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedOption] = useState(null);
   const navigate = useNavigate();
 
+  const handleNext = () => {
+    if (currentStep < 4) {
+      setCurrentStep((prev) => prev + 1);
+    }
+  };
+
   const handleScroll = (event) => {
     if (event.deltaY > 0 && currentStep < 4) {
+      // Scroll para baixo: Avança um passo
       setCurrentStep((prev) => prev + 1);
-    } else if (event.deltaY < 0 && currentStep > 0) {
+    } else if (event.deltaY < 0 && currentStep > 1) {
+      // Scroll para cima: Volta um passo
       setCurrentStep((prev) => prev - 1);
     }
   };
 
-  const handleNext = () => {
-    if (selectedOption === "contratante") {
-      navigate("/contratante");
-    } else if (selectedOption === "prestador") {
-      navigate("/prestador");
-    } else {
-      alert("Por favor, selecione uma opção para continuar.");
-    }
-  };
+  useEffect(() => {
+    window.addEventListener('wheel', handleScroll);
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+    };
+  }, [currentStep]);
 
   return (
     <div className="register-container">
+
       {/* Sidebar */}
       <Sidebar currentStep={currentStep} alwaysCompleteFirstStep={true} />
 
-      <div className="main" name="Etapa 1" onWheel={handleScroll}>
+      <div className="main" name="Etapa 1">
         {/* Link Voltar */}
         <Link to="/register" className="top-left-link">
           <BsChevronBarLeft size={20} /> Página Inicial
@@ -131,7 +138,7 @@ function ContratantePage() {
           </div>
         </div>
 
-        <Button onClick={handleNext} text="Próximo" />
+        <Button onClick={handleNext} disabled={currentStep === 4} text="Próximo" />
       </div>
     </div>
   );

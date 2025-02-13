@@ -1,4 +1,3 @@
-
 /* Container central */
 .form-container {
   width: 100%;
@@ -83,6 +82,4 @@
 .full-width {
   grid-column: span 2;
 }
-
-
 
