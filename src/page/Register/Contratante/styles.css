@@ -71,6 +71,19 @@
   flex-direction: column;
 }
 
+.address-group {
+  display: flex; /* Flexbox para alinhar os campos horizontalmente */
+  gap: 10px; /* Espaçamento entre os campos */
+}
+
+.address-group input {
+  flex: 1; /* Faz com que os campos ocupem o mesmo espaço disponível */
+}
+
+.address-group input#numero {
+  width: 100px; /* Ajuste do tamanho do campo de número, se necessário */
+}
+
 .form-group input {
   padding: 8px;
   border: 1px solid #ccc;
@@ -82,4 +95,17 @@
 .full-width {
   grid-column: span 2;
 }
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end; /* Alinha o botão à direita */
+  margin-top: 20px; /* Ajuste o espaçamento conforme necessário */
+}
+
+.button-wrapper button {
+  width: 23rem;
+  margin-top: 14.5rem;
+}
+
+
 

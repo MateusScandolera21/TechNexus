@@ -1,20 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { withMask } from 'use-mask-input';
+import { fetchAddressByZipcode } from '../../../api/cepService';
 import "./styles.css";
 
 import Button from "../../../Components/button/button";
 import Sidebar from "../../../Components/Sidebar/Sidebar";
 
 import { BsChevronBarLeft } from "react-icons/bs";
-import { Link, useNavigate } from "react-router-dom";
-import { BsEnvelopeAt } from "react-icons/bs";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { BsGlobe } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { BsEnvelopeAt, BsFillTelephoneFill, BsGlobe } from "react-icons/bs";
+
 
 function ContratantePage() {
+  
+  // Função para completar o CEP
+  async function handleZipcodeBlur(e) {
+    const zipcode = e.target.value;
+  
+    const address = await fetchAddressByZipcode(zipcode);
+    if (address) {
+      setAddress(address);
+    } else {
+      console.log("Endereço não encontrado.");
+    }
+  }
 
+  const [address, setAddress] = useState({ city: '', street: '' });
   const [currentStep, setCurrentStep] = useState(1);
-  const [selectedOption] = useState(null);
-  const navigate = useNavigate();
 
   const handleNext = () => {
     if (currentStep < 4) {
@@ -22,7 +34,8 @@ function ContratantePage() {
     }
   };
 
-  const handleScroll = (event) => {
+  // Usando useCallback para memorizar a função
+  const handleScroll = useCallback((event) => {
     if (event.deltaY > 0 && currentStep < 4) {
       // Scroll para baixo: Avança um passo
       setCurrentStep((prev) => prev + 1);
@@ -30,14 +43,16 @@ function ContratantePage() {
       // Scroll para cima: Volta um passo
       setCurrentStep((prev) => prev - 1);
     }
-  };
+  }, [currentStep]); // currentStep como dependência
 
   useEffect(() => {
     window.addEventListener('wheel', handleScroll);
     return () => {
       window.removeEventListener('wheel', handleScroll);
     };
-  }, [currentStep]);
+  }, [handleScroll]);
+
+
 
   return (
     <div className="register-container">
@@ -46,6 +61,7 @@ function ContratantePage() {
       <Sidebar currentStep={currentStep} alwaysCompleteFirstStep={true} />
 
       <div className="main" name="Etapa 1">
+        
         {/* Link Voltar */}
         <Link to="/register" className="top-left-link">
           <BsChevronBarLeft size={20} /> Página Inicial
@@ -63,7 +79,7 @@ function ContratantePage() {
               <form>
                 <div className="grid-container single-column">
                   <div className="form-group">
-                    <input type="text" placeholder="CNPJ"/>
+                    <input type="text" id='cnpj' placeholder="CNPJ" ref={withMask('99.999.999/9999-99')} />
                   </div>
 
                   <div className="form-group">
@@ -79,24 +95,53 @@ function ContratantePage() {
                   </div>
 
                   <div className="form-group">
-                    <input type="text" placeholder="CEP"/>
+                    <input 
+                      type="text" 
+                      id='cep' 
+                      placeholder="CEP" 
+                      ref={withMask('99999-999')} 
+                      onBlur={handleZipcodeBlur}/>
                   </div>
 
                   <div className="form-group">
-                    <input type="text" placeholder="Endereço"/>
+                    <div className="address-group">
+                      <input
+                        type="text"
+                        placeholder="Endereço"
+                        id="address"
+                        value={address.street}
+                      />
+
+                      <input
+                        type="text"
+                        placeholder="Número"
+                        id="numero"
+                        />
+                    </div>
+                  </div>
+
+
+                  <div className="form-group">
+                    <input 
+                      type="text" 
+                      placeholder="Cidade"
+                      id="city"
+                      value={address.city}
+                    />
                   </div>
 
                   <div className="form-group">
-                    <input type="text" placeholder="Nº"/>
-                  </div>
-
-                  <div className="form-group">
-                    <input type="text" placeholder="Bairro"/>
+                    <input 
+                      type="text" 
+                      placeholder="Bairro"
+                      value={address.neighborhood || ''}
+                    />
                   </div>
 
                   <div className="form-group">
                     <input type="text" placeholder="Complemento"/>
                   </div>
+
                 </div>
               </form>
             </div>
@@ -111,11 +156,10 @@ function ContratantePage() {
                   <div className="form-group">
                     <div className="input-icon-wrapper">
                       <BsFillTelephoneFill className="icon" />
-                      <input type="text" placeholder="+55(01)23456-7890" />
+                      <input type="text" id='phone' placeholder="(99)99999-9999" ref={withMask('(99)99999-9999')} />
                     </div>
                   </div>
 
-                  
                   <div className="form-group email-input">
                     <div className="input-icon-wrapper">
                       <BsEnvelopeAt className="icon" />
@@ -123,7 +167,6 @@ function ContratantePage() {
                     </div>
                   </div>
 
-                  
                   <div className="form-group">
                     <div className="input-icon-wrapper">
                       <BsGlobe className="icon" />
@@ -134,11 +177,15 @@ function ContratantePage() {
                 </div>
               </form>
 
+              <div className="button-wrapper">
+                <Button onClick={handleNext} disabled={currentStep === 4} text="Próximo" />
+              </div>
             </div>
           </div>
         </div>
 
-        <Button onClick={handleNext} disabled={currentStep === 4} text="Próximo" />
+        
+        
       </div>
     </div>
   );
