@@ -58,13 +58,13 @@ function ContratantePage() {
     <div className="register-container">
 
       {/* Sidebar */}
-      <Sidebar currentStep={currentStep} alwaysCompleteFirstStep={true} />
+      {/*<Sidebar currentStep={currentStep} alwaysCompleteFirstStep={true} />*/}
 
       <div className="main" name="Etapa 1">
         
         {/* Link Voltar */}
         <Link to="/register" className="top-left-link">
-          <BsChevronBarLeft size={20} /> Página Inicial
+          <BsChevronBarLeft size={20} /> Anterior
         </Link>
 
         {/* Container dos dois formulários */}

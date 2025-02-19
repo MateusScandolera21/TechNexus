@@ -1,4 +1,5 @@
 import './App.css';
+import Login from './page/Login/Login';
 import Home from './page/Home/Home';
 import RegisterPage  from './page/Register/RegisterPage';
 import ContratantePage from './page/Register/Contratante/ContratantePage';
@@ -10,6 +11,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/contratante" element={<ContratantePage />} />
         <Route path="/prestador" element={<PrestadorPage />} />

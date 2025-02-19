@@ -20,7 +20,7 @@ const Sidebar = ({ currentStep, alwaysCompleteFirstStep, showSteps = true }) => 
         </div>
       )}
 
-      {/* Exibe os passos somente se showSteps for true */}
+      {/* Exibe os passos somente se showSteps for true*/}
       {showSteps && (
         <div className="stepContainer">
           {[...Array(5)].map((_, index) => (
