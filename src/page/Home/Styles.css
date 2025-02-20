@@ -24,24 +24,98 @@
 .logo-superior {
   position: absolute; 
   top: 34px;
-  left: 65px;
+  left: 6.80rem;
 }
 
 .logo {
-  width: 15rem; /* Ajuste o tamanho da logo conforme necessário */
+  width: 10rem; /* Ajuste o tamanho da logo conforme necessário */
   height: 3.938rem;
+  margin-left: 5rem;
 }
 
-/* Logo TXT info*/
+/* Estilo do container do botão */
+.botao-superior-direito {
+  position: absolute; /* Posicionamento absoluto */
+  top: 34px;
+  right: 6.80rem; /* Distância da direita */
+}
+
+.enter-button{
+  padding: 10px 20px;
+}
+/* Info Principal*/
 .logo-txt-info{
+  margin-top: 120px;
   width: 21rem;/* Ajuste o tamanho do título SVG conforme necessário */
   height: 5rem;
   margin-bottom: 20px; /* Espaçamento abaixo do título */
+  text-align: left;
+  padding: 0;
 }
 
-
-/* Info Principal*/
-
 .txt-principal{
-  margin-top: 60px;
+  margin-left: 10rem;
+  margin-top: 5rem;
+  padding-bottom: 40px;
+  position: relative;
+}
+.txt-principal p{
+  font-size: 1.2rem;
+  font-family: Inter;
+  font-style: normal;
+  line-height: 150%;
+  font-weight: 400px;
+  line-height: 1.6;
+  color: #fff;
+  max-width: 350px;
+  text-align: left;
+}
+
+.linha {
+  width: 86vw; 
+  height: 2px; 
+  margin: 0 auto;
+  left: 6%;
+  background-color: #E6E6E6; 
+  position: absolute; 
+  top: calc(100% - 134px); /* Posiciona abaixo do container txt-principal */
+}
+
+.logo-inferior {
+  position: absolute;
+  left: 6.80rem;
+  top: calc(100% - 130px) /* Posiciona abaixo da linha */
+}
+
+.logo-inf{
+  width: 150px; 
+  height: auto; 
+}
+
+/*Icons*/
+
+.icones-redes-sociais {
+  position: absolute;
+  top: calc(100% - 60px); /* Posiciona abaixo da logo inferior */
+  left: 7.50rem;
+  display: flex;
+  gap: 20px;
+}
+
+.icones-redes-sociais a {
+  color: #E6E6E6; /* Cor padrão dos ícones */
+  transition: color 0.3s ease; /* Efeito de transição */
+  text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+.icones-redes-sociais a:hover {
+  color: #1877f2; /* Cor do Facebook ao passar o mouse */
+}
+
+.icone-facebook:hover {
+  color: #1877f2; /* Cor do Facebook ao passar o mouse */
+}
+
+.icone-instagram:hover {
+  color: #e4405f; /* Cor do Instagram ao passar o mouse */
 }

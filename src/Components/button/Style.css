@@ -19,3 +19,20 @@ button .button-text {
   flex-grow: 1; 
   text-align: left; 
 }
+
+.button:hover{
+  background-color: #488574;
+}
+
+/* Variante "primary" */
+.button.primary {
+  background-color: #273330;
+  color: #fff;
+  width: 7rem;
+  max-width: 800px;
+  padding: 1.5rem;
+}
+
+.button.primary:hover {
+  background-color: #488574;
+}

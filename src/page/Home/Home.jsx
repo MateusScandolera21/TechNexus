@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 
 import logo from '../../img/Technexus-04.svg';
 import logotxt from '../../img/Technexus-03.svg';
+import { BsFacebook } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
+
+import Button from '../../Components/button/button'
 
 
 const Home = () => {
@@ -14,6 +18,11 @@ const Home = () => {
       {/* Logo superior */}
       <div className='logo-superior'>
         <img src={logo} alt='Tech Nexus logo' className='logo' />
+      </div>
+
+      {/* Botão no canto superior direito */}
+      <div className="botao-superior-direito">
+        <Button text="Entrar" variant="primary"/>
       </div>
       
       <div className='txt-principal'>
@@ -29,9 +38,22 @@ const Home = () => {
         </p>
       </div>
 
-      <div className='login'>
-        
+      <div className="linha"></div>
+
+      <div className='logo-inferior'>
+        <img src={logo} alt='Tech Nexus logo' className='logo-inf' />
       </div>
+
+      {/* Ícones das redes sociais */}
+      <div className="icones-redes-sociais">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <BsFacebook size={20} className="icone-facebook" />
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <BsInstagram size={20} className="icone-instagram" />
+        </a>
+      </div>
+      
 
     </div>
   );
