@@ -1,7 +1,4 @@
-/* Sidebar.css */
 .sidebar {
-  flex: 0 0 30%;
-  max-width: 450px;
   background: 
     linear-gradient(
       180deg, 
@@ -10,35 +7,29 @@
       #273330 100%
     ),
     url('../../img/Technexus-02.svg'); 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
+  width: 250px;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding: 20px;
 }
 
-.logo-image {
-  width: 15.625rem;
-  height: 127px;
-  flex-shrink: 0;
+.logo{
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Text-Principal {
   color: #DBD8D8;
   font-size: 25px;
-  font-style: normal;
   font-weight: 900;
   line-height: 46px; 
-  flex-direction: column;
+  display: flex;
   justify-content: center;
+  text-align: left;
   width: 274px;
   height: 157px;
-  display: flex;
-  text-align: left;
   flex-shrink: 0;
-  margin-left: 1.8rem;
+  margin: 0; /* Remover qualquer margem externa */
 }

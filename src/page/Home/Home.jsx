@@ -21,9 +21,9 @@ const Home = () => {
       </div>
 
       {/* Botão no canto superior direito */}
-      <div className="botao-superior-direito">
+      <Link to="/login" className="botao-superior-direito">
         <Button text="Entrar" variant="primary"/>
-      </div>
+      </Link>
       
       <div className='txt-principal'>
 
