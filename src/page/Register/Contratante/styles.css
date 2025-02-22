@@ -1,4 +1,3 @@
-/* Container central */
 .form-container {
   width: 100%;
   max-width: 900px;
@@ -28,7 +27,6 @@
   padding: 20px;
 }
 
-/* Deixa os inputs do formulário de Contato um abaixo do outro */
 .contact-form .grid-container {
   display: flex;
   flex-direction: column;
@@ -46,7 +44,7 @@
 /* Ícone fora da borda do input */
 .input-icon-wrapper .icon {
   position: absolute;
-  left: -30px; /* Ajuste conforme necessário */
+  left: -30px; 
   color: #333;
   font-size: 25px;
 }
@@ -54,7 +52,7 @@
 /* Input ajustado */
 .input-icon-wrapper input {
   width: 100%;
-  padding-left: 10px; /* Reduz espaço interno do input */
+  padding-left: 10px; 
   box-sizing: border-box;
 }
 
@@ -72,16 +70,16 @@
 }
 
 .address-group {
-  display: flex; /* Flexbox para alinhar os campos horizontalmente */
-  gap: 10px; /* Espaçamento entre os campos */
+  display: flex; 
+  gap: 10px; 
 }
 
 .address-group input {
-  flex: 1; /* Faz com que os campos ocupem o mesmo espaço disponível */
+  flex: 1; 
 }
 
 .address-group input#numero {
-  width: 100px; /* Ajuste do tamanho do campo de número, se necessário */
+  width: 100px; 
 }
 
 .form-group input {
@@ -98,13 +96,25 @@
 
 .button-wrapper {
   display: flex;
-  justify-content: flex-end; /* Alinha o botão à direita */
-  margin-top: 20px; /* Ajuste o espaçamento conforme necessário */
+  justify-content: flex-end; 
+  margin-top: 20px; 
 }
 
 .button-wrapper button {
   width: 23rem;
   margin-top: 14.5rem;
+}
+
+.top-left-cp{
+  position: fixed;
+  top: 100px; 
+  left: 10rem; 
+  text-decoration: none; 
+  color: #000; 
+  font-size: 1rem; 
+  display: inline-flex; 
+  align-items: center; 
+  z-index: 10; 
 }
 
 

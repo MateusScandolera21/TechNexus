@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 import Button from "../../Components/button/button";
 import Sidebar from "../../Components/Sidebar/Sidebar";
+import ButtonContainer from "../../Components/ButtonContainer/ButtonContainer";
 
 import { BsEnvelope } from "react-icons/bs";
 import { BsLock } from "react-icons/bs";
-import { BsEyeSlash } from "react-icons/bs";
-import { BsEye } from "react-icons/bs";
+import { BsChevronBarLeft } from "react-icons/bs";
 
 
 
@@ -18,6 +18,9 @@ const Login = () => {
 
   return (
     <div className="login-container">
+
+      {/* Link Voltar para Página Inicial */}
+      <Link to="/" className="top-left-login"><BsChevronBarLeft size={20} /> Página Inicial</Link>
 
       {/* Botão CADASTRE-SE */}
       <div className="signup-container">
@@ -34,42 +37,20 @@ const Login = () => {
         <p>FAÇA LOGIN PARA CONTINUAR</p>
 
         <form>
-          <div className="input-group">
-            <label htmlFor="email" />
-            <div className="input-icon">
-              <BsEnvelope className="icon" />
-              <input
-                type="email"
-                name="email"
-                placeholder="Digite Seu Email"               
-              />
-            </div>
-          </div>
+        <ButtonContainer
+            type="email"
+            icon={BsEnvelope}
+            placeholder="Digite Seu Email"
+          />
           
-          <div className="input-group">
-            <label htmlFor="password" />
-            <div className="input-icon">
+          <ButtonContainer
+            type="password"
+            icon={BsLock}
+            placeholder="********"
+            isPasswordVisible={isPasswordVisible}
+            onTogglePasswordVisibility={() => setIsPasswordVisible(!isPasswordVisible)}
+          />
 
-              <BsLock className="icon" />
-
-              <input
-                type={isPasswordVisible ? 'text' : 'password'}
-                id="password"
-                placeholder="********"               
-              />
-
-              <button type="button" className="eye-button" onClick={() => setIsPasswordVisible(!isPasswordVisible)}>
-                {isPasswordVisible ? (
-                  <BsEye className="icon-password"/>
-                ) : (
-                  <BsEyeSlash className="icon-password"/>
-                )}
-                
-
-              </button>
-
-            </div>
-          </div>
 
 
           <Button text="Entrar" />

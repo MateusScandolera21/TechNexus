@@ -4,25 +4,58 @@
   position: relative;
 }
 
-/*Main*/
-
+/* Main */
 .main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px; 
 }
 
 .main h2 {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem; 
 }
 
-.options {
+.main p {
+  margin-bottom: 2rem; 
+}
+
+/* Container dos formulários */
+.form-container {
+  width: 100%;
+  max-width: 900px;
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Alinha os formulários lado a lado */
+.login-cadastro {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  margin: 20px 0;
+  justify-content: space-between;
+  gap: 10rem;
+}
+
+.test1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.test2 h2{
+  margin-bottom: 5rem;
+}
+
+/* Estilo das opções de seleção */
+.container-option {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+  margin-left: 10rem;
 }
 
 .option {
@@ -31,188 +64,39 @@
   width: 100%; 
   max-width: 400px; 
   margin-bottom: 10px; 
-  justify-content: flex-start; 
-}
-
-.single-option {
-  margin-bottom: 20px; 
+  justify-content: flex-start;
 }
 
 input[type="radio"] {
-  margin-right: 10px; 
+  margin-right: 10px;
   transform: scale(1.5);
 }
 
 label {
   font-size: larger;
-  min-width: 100px; 
-  text-align: left; 
 }
 
-/*Voltar para a home*/
+/* Botão Próximo */
+.button-login {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5.50rem;
+}
 
-.top-left-link {
+.button-wrapper button {
+  width: 23rem;
+  margin-top: 14.5rem;
+}
+
+/* Link "Voltar para a home" */
+.top-left {
   position: fixed;
-  top: 20px; 
-  left: calc(25% + 20px); 
-  text-decoration: none; 
-  color: #000; 
-  font-size: 1rem; 
-  display: inline-flex; 
-  align-items: center; 
-  z-index: 10; 
+  top: 100px;
+  left: 10rem;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  z-index: 10;
 }
-
-
-
-/* Responsividade */
-/* Ajuste para telas de largura maior */
-@media (min-width: 1400px) {
-  .sidebar {
-    max-width: 400px;
-    padding: 2rem;
-  }
-
-  .stepContainer {
-    padding: 3rem 0;
-  }
-
-  .next-button {
-    max-width: 700px;
-    padding: 1.2rem;
-  }
-
-  .option, .single-option {
-    max-width: 500px;
-  }
-
-  .top-left-link {
-    left: calc(29% + 20px);
-  }
-}
-
-/* Ajuste para telas médias (entre tablet e desktop) */
-@media (max-width: 1024px) {
-  .register-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .sidebar {
-    width: 100%; /* Ocupa a largura total da tela */
-    max-width: none;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 1.5rem;
-    position: fixed; /* Fixa a sidebar no topo */
-    top: 0;
-    left: 0;
-    z-index: 10; /* Garante que a sidebar fique sobre outros elementos */
-  }
-
-  .stepContainer {
-    flex-direction: row; /* Exibe o conteúdo da stepContainer em linha */
-    gap: 1rem;
-    padding: 1rem 0;
-  }
-
-  .step {
-    flex-direction: column; /* Coloca o texto abaixo do círculo */
-    align-items: center;
-  }
-
-  /* Estilos para linha de conexão horizontal entre etapas */
-  .stepContainer .step:not(:last-child) .circle::after {
-    content: '';
-    position: absolute;
-    left: 100%; /* Coloca a linha à direita do círculo */
-    top: 50%;
-    width: 33px; /* Comprimento da linha */
-    height: 2px; /* Altura da linha */
-    background-color: white;
-    z-index: -1;
-    transform: translateY(-50%);
-  }
-
-  .circle {
-    width: 40px;
-    height: 40px;
-  }
-
-  .step-number {
-    font-size: 14px;
-  }
-
-  .main {
-    padding: 1.5rem;
-  }
-
-  .next-button {
-    width: 80%;
-  }
-
-  .top-left-link {
-    left: calc(30% + 20px);
-  }
-}
-
-
-
-/* Ajuste para tablets */
-@media (max-width: 768px) {
-  .register-container {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    display: none; /* Esconde a sidebar em dispositivos pequenos */
-  }
-
-  .top-left-link {
-    left: 10px;
-  }
-
-  .stepContainer {
-    gap: 1rem;
-    padding: 1rem 0;
-  }
-
-  .circle {
-    width: 40px;
-    height: 40px;
-  }
-
-  .step-number {
-    font-size: 14px;
-  }
-
-  .next-button {
-    width: 90%;
-    padding: 1rem;
-  }
-
-  .top-left-link {
-    left: calc(29% + 20px);
-  }
-}
-
-/* Ajuste para telas pequenas (smartphones) */
-@media (max-width: 480px) {
-  .main {
-    padding: 1rem;
-  }
-
-  .next-button {
-    width: 100%;
-    padding: 0.8rem;
-  }
-
-  .step-number {
-    font-size: 12px;
-  }
-
-  label {
-    font-size: 1rem;
-  }
-}
-

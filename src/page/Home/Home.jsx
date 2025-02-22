@@ -15,15 +15,19 @@ const Home = () => {
   return (
     <div className='home-container'>
 
-      {/* Logo superior */}
-      <div className='logo-superior'>
-        <img src={logo} alt='Tech Nexus logo' className='logo' />
-      </div>
+      
+      <div className='header-container'>
 
-      {/* Botão no canto superior direito */}
-      <Link to="/login" className="botao-superior-direito">
-        <Button text="Entrar" variant="primary"/>
-      </Link>
+        {/* Logo superior */}
+        <div className='logo-superior'>
+          <img src={logo} alt='Tech Nexus logo' className='logo' />
+        </div>
+
+        {/* Botão no canto superior direito */}
+        <Link to="/login" className="botao-superior-direito">
+          <Button text="Entrar" variant="primary" />
+        </Link>
+      </div>
       
       <div className='txt-principal'>
 

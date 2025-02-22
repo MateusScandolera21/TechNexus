@@ -4,9 +4,9 @@ import ImgLogo from '../../img/Technexus-02.svg';
 
 const Sidebar = ({ showSteps = false }) => {
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${showSteps ? 'top-bar' : ''}`}>
       {/* Logo */}
-      <div className="logo">
+      <div className="logo-bar">
         <img src={ImgLogo} alt="TechNexus Logo" className="logo-image" />
       </div>
 

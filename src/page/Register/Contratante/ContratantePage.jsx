@@ -58,12 +58,12 @@ function ContratantePage() {
     <div className="register-container">
 
       {/* Sidebar */}
-      {/*<Sidebar currentStep={currentStep} alwaysCompleteFirstStep={true} />*/}
+      <Sidebar showSteps={true} />
 
-      <div className="main" name="Etapa 1">
+      <div className="main">
         
         {/* Link Voltar */}
-        <Link to="/register" className="top-left-link">
+        <Link to="/register" className="top-left-cp">
           <BsChevronBarLeft size={20} /> Anterior
         </Link>
 
