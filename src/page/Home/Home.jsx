@@ -15,7 +15,6 @@ const Home = () => {
   return (
     <div className='home-container'>
 
-      
       <div className='header-container'>
 
         {/* Logo superior */}

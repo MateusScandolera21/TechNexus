@@ -4,16 +4,25 @@ import './Styles.css';
 import { BsEyeSlash } from "react-icons/bs";
 import { BsEye } from "react-icons/bs";
 
-const InputGroup = ({ type, icon: Icon, placeholder, isPasswordVisible, onTogglePasswordVisibility }) => {
+const InputGroup = ({ 
+  type, 
+  icon: Icon, 
+  placeholder, 
+  isPasswordVisible, 
+  onTogglePasswordVisibility, 
+  value, 
+  onChange}) => {
   return (
-    <div className="input-group">
+    <div className="InputContainer">
       <label htmlFor={type} />
       <div className="input-icon">
         {Icon && <Icon className="icon" />}
         <input
-          type={type === 'password' && isPasswordVisible ? 'text' : type}
-          id={type}
-          placeholder={placeholder}
+          type={ type === 'password' && isPasswordVisible ? 'text' : type }
+          id={ type }
+          placeholder={ placeholder }
+          value={ value }
+          onChange={ onChange }
         />
         {type === 'password' && (
           <button type="button" className="eye-button" onClick={onTogglePasswordVisibility}>

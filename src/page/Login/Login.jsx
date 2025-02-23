@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 import Button from "../../Components/button/button";
 import Sidebar from "../../Components/Sidebar/Sidebar";
-import ButtonContainer from "../../Components/ButtonContainer/ButtonContainer";
+import InputGroup from '../../Components/InputContainer/InputContainer';
+
 
 import { BsEnvelope } from "react-icons/bs";
 import { BsLock } from "react-icons/bs";
@@ -37,13 +38,13 @@ const Login = () => {
         <p>FAÇA LOGIN PARA CONTINUAR</p>
 
         <form>
-        <ButtonContainer
+        <InputGroup
             type="email"
             icon={BsEnvelope}
             placeholder="Digite Seu Email"
           />
           
-          <ButtonContainer
+          <InputGroup
             type="password"
             icon={BsLock}
             placeholder="********"

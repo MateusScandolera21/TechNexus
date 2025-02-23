@@ -258,50 +258,51 @@
   .txt-principal {
     margin-left: 0; /* Remove a margem esquerda */
     margin-top: 20px; /* Adiciona margem no topo */
-    text-align: center; /* Centraliza o texto */
-    padding-bottom: 20px; /* Reduz o padding inferior */
+    text-align: center; 
+    padding-bottom: 20px; 
   }
 
   .logo-txt-info {
-    width: 15rem; /* Reduz o tamanho do título SVG */
-    height: auto; /* Mantém a proporção */
-    margin-bottom: 10px; /* Reduz o espaçamento abaixo do título */
+    width: 15rem; 
+    height: auto; 
+    margin-bottom: 10px; 
   }
 
   .txt-principal p {
-    font-size: 1rem; /* Reduz o tamanho da fonte */
-    max-width: 90%; /* Limita a largura do texto */
-    text-align: center; /* Centraliza o texto */
+    font-size: 1rem; 
+    max-width: 90%; 
+    text-align: center; 
   }
 
   /* Linha */
   .linha {
-    width: 90%; /* Ajusta a largura da linha */
-    position: static; /* Remove o posicionamento absoluto */
-    margin-top: 20px; /* Adiciona margem no topo */
-    margin-bottom: 20px; /* Adiciona margem na base */
+    width: 90%;
+    position: static; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
   }
 
   /* Logo inferior */
   .logo-inferior {
-    position: static; /* Remove o posicionamento absoluto */
-    margin-top: 20px; /* Adiciona margem no topo */
-    text-align: center; /* Centraliza a logo */
+    position: static;
+    margin-top: 20px; 
+    text-align: center; 
   }
 
   .logo-inf {
-    width: 100px; /* Reduz o tamanho da logo */
-    height: auto; /* Mantém a proporção */
+    width: 100px; 
+    height: auto; 
   }
 
   /* Ícones das redes sociais */
   .icones-redes-sociais {
-    position: static; /* Remove o posicionamento absoluto */
-    margin-top: 20px; /* Adiciona margem no topo */
-    justify-content: center; /* Centraliza os ícones */
+    position: static; 
+    margin-top: 20px; 
+    justify-content: center; 
   }
 
   .icones-redes-sociais a {
-    margin: 0 10px; /* Adiciona espaçamento entre os ícones */
+    margin: 0 10px; 
   }
 }
+
