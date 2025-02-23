@@ -1,64 +1,65 @@
-import { React } from 'react';
-import './Styles.css';
-import { Link } from 'react-router-dom';
-
+import React from 'react';
+import {
+  HomeContainer,
+  HeaderContainer,
+  LogoSuperior,
+  Logo,
+  BotaoSuperiorDireito,
+  ContentContainer,
+  LogoTxtInfo,
+  TextPrincipal,
+  Linha,
+  LogoInferior,
+  LogoInf,
+  IconesRedesSociais,
+  IconeFacebook,
+  IconeInstagram
+} from './StyledHome';
+import Button from '../../Components/Button/Button';
 import logo from '../../img/Technexus-04.svg';
 import logotxt from '../../img/Technexus-03.svg';
-import { BsFacebook } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-
-import Button from '../../Components/button/button'
-
 
 const Home = () => {
-
   return (
-    <div className='home-container'>
+    <HomeContainer>
+      <HeaderContainer>
+        <LogoSuperior>
+          <Logo src={logo} alt='Tech Nexus logo' />
+        </LogoSuperior>
 
-      <div className='header-container'>
-
-        {/* Logo superior */}
-        <div className='logo-superior'>
-          <img src={logo} alt='Tech Nexus logo' className='logo' />
-        </div>
-
-        {/* Botão no canto superior direito */}
-        <Link to="/login" className="botao-superior-direito">
+        <BotaoSuperiorDireito to="/login">
           <Button text="Entrar" variant="primary" />
-        </Link>
-      </div>
-      
-      <div className='txt-principal'>
+        </BotaoSuperiorDireito>
+      </HeaderContainer>
 
-        <img src={logotxt} alt='Tech Nexus' className='logo-txt-info' />
+      <ContentContainer>
+        <LogoTxtInfo src={logotxt} alt='Tech Nexus' />
+        <TextPrincipal>
+          <p>
+            Aqui, networking é mais do que um encontro de interesses; 
+            é a fundação para as inovações que transformam o mundo. 
+            Quando talentos e conhecimentos se unem, o impossível torna-se 
+            possível. Somos a ponte que conecta talentos, o catalisador que 
+            promove o crescimento, e a plataforma que facilita o progresso. 
+          </p>
+        </TextPrincipal>
+      </ContentContainer>
 
-        <p>
-        Aqui, networking é mais do que um encontro de interesses; 
-        é a fundação para as inovações que transformam o mundo. 
-        Quando talentos e conhecimentos se unem, o impossível torna-se 
-        possível. Somos a ponte que conecta talentos, o catalisador que 
-        promove o crescimento, e a plataforma que facilita o progresso. 
-        </p>
-      </div>
+      <Linha />
 
-      <div className="linha"></div>
+      <LogoInferior>
+        <LogoInf src={logo} alt='Tech Nexus logo' />
+      </LogoInferior>
 
-      <div className='logo-inferior'>
-        <img src={logo} alt='Tech Nexus logo' className='logo-inf' />
-      </div>
-
-      {/* Ícones das redes sociais */}
-      <div className="icones-redes-sociais">
+      <IconesRedesSociais>
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-          <BsFacebook size={20} className="icone-facebook" />
+          <IconeFacebook size={20} />
         </a>
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          <BsInstagram size={20} className="icone-instagram" />
+          <IconeInstagram size={20} />
         </a>
-      </div>
-      
-
-    </div>
+      </IconesRedesSociais>
+    </HomeContainer>
   );
 };
 

@@ -1,22 +1,31 @@
 import React from 'react';
-import './styles.css';
-import ImgLogo from '../../img/Technexus-02.svg';
+import { useMediaQuery } from 'react-responsive';
+import * as S from './SidebarStyles';
+import logo from '../../img/Technexus-02.svg';
 
-const Sidebar = ({ showSteps = false }) => {
+const Sidebar = ({ showSteps, forceTopBar }) => {
+  const isTopBar = useMediaQuery({ maxWidth: 1000 });
+
+  // Se forceTopBar for true, ativa a TopBar independentemente do tamanho da tela
+  const shouldShowTopBar = forceTopBar || isTopBar;
+  /*
+  <Sidebar showSteps={true} forceTopBar={true} />
+
+  (TopBar só em telas menores que 1000px) 
+  <Sidebar showSteps={true} forceTopBar={false} />
+  */
+
   return (
-    <div className={`sidebar ${showSteps ? 'top-bar' : ''}`}>
-      {/* Logo */}
-      <div className="logo-bar">
-        <img src={ImgLogo} alt="TechNexus Logo" className="logo-image" />
-      </div>
-
-      {/* Texto Principal */}
-      {!showSteps && (
-        <div className="Text-Principal">
-          <h2>Oportunidades de Crescimento Profissional</h2>
-        </div>
+    <S.SidebarContainer className={shouldShowTopBar ? 'top-bar' : ''}>
+      <S.LogoBar isTopBar={shouldShowTopBar}>
+        <S.LogoImage src={logo} alt="Logo" isTopBar={shouldShowTopBar} />
+      </S.LogoBar>
+      {!shouldShowTopBar && (
+        <S.TextPrincipal>
+          Oportunidades de Crescimento Profissional
+        </S.TextPrincipal>
       )}
-    </div>
+    </S.SidebarContainer>
   );
 };
 

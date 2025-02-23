@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import './Register.css';
-import Sidebar from '../../Components/Sidebar/Sidebar';
-import Button from '../../Components/button/button';
-import ButtonContainer from "../../Components/InputContainer/InputContainer";
-
-import { BsChevronBarLeft } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
-import { BsEnvelope, BsLock } from "react-icons/bs";
+import { BsChevronBarLeft, BsEnvelope, BsLock } from "react-icons/bs";
+import Input from '../../Components/Input/Input';
+import Button from '../../Components/Button/Button';
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import * as S from './RegisterStyles';
 
 function RegisterPage() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -17,7 +15,6 @@ function RegisterPage() {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  // Função para validar os campos
   const validateFields = () => {
     const newErrors = {};
 
@@ -40,15 +37,14 @@ function RegisterPage() {
     }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0; // Retorna true se não houver erros
+    return Object.keys(newErrors).length === 0;
   };
 
-  // Função chamada ao clicar no botão "Próximo"
   const handleNext = () => {
     const isValid = validateFields();
 
     if (!isValid) {
-      return; // Não prossegue se houver erros
+      return;
     }
 
     if (!selectedOption) {
@@ -56,7 +52,6 @@ function RegisterPage() {
       return;
     }
 
-    // Redireciona com base na opção selecionada
     if (selectedOption === "contratante") {
       navigate('/contratante');
     } else if (selectedOption === "prestador") {
@@ -65,76 +60,69 @@ function RegisterPage() {
   };
 
   return (
-    <div className="register-container">
-      {/* Sidebar */}
-      <Sidebar showSteps={true} />
+    <S.RegisterContainer>
+      
+      <Sidebar showSteps={true} forceTopBar={true}/>
 
-      <div className="main">
-        
-        <div className='header-container'>
-          {/* Link Voltar para Página Inicial */}
-          <Link to="/login" className="top-left"><BsChevronBarLeft size={20} /> Página Inicial</Link>
+      <S.HeaderContainer>
 
-          {/* Botão Entrar */}
-          <div className="top-right">
+          <S.BackLink to="/login">
+            <BsChevronBarLeft size={20} /> Página Inicial
+          </S.BackLink>
+
+          <S.LoginLinkContainer>
             <p>Já possui uma conta? </p>
-            <Link to="/login" className="Login-button">Entrar</Link>
-          </div>
-
-        </div>
-        {/* Container dos dois formulários */}
-        <div className="form-container">
+            <Link to="/login" className="loginButton">Entrar</Link>
+          </S.LoginLinkContainer>
           
-          {/* Formulário e opções lado a lado */}
-          <div className="login-cadastro">
-            {/* Formulário de Login */}
-            <div className="test1">
+      </S.HeaderContainer>
 
+      <S.MainContent>
+        <S.FormWrapper>
+          <S.FormContainer>
+            
+            <S.FormColumn>
               <h2>Cadastra-se</h2>
-              <p>INSIRA O EMAIL E CRIE A SENHA PARA CONTINUAR</p>
+              <S.FormMessage>INSIRA O EMAIL E CRIE A SENHA PARA CONTINUAR</S.FormMessage>
 
               <form>
-                {/* Campo de Email */}
-                <ButtonContainer
+                <Input
                   type="email"
                   icon={BsEnvelope}
                   placeholder="Digite seu email"
-                  onChange={(e) => setEmail(e.target.value)} // Passa o onChange
-                  value={email} // Passa o valor
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
                 />
-                {errors.email && <p className="labelError">{errors.email}</p>}
+                {errors.email && <S.ErrorMessage>{errors.email}</S.ErrorMessage>}
 
-                {/* Campo de Senha */}
-                <ButtonContainer
+                <Input
                   type="password"
                   icon={BsLock}
                   placeholder="Digite sua senha"
                   isPasswordVisible={isPasswordVisible}
                   onTogglePasswordVisibility={() => setIsPasswordVisible(!isPasswordVisible)}
-                  onChange={(e) => setPassword(e.target.value)} // Passa o onChange
-                  value={password} // Passa o valor
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
                 />
-                {errors.password && <p className="labelError">{errors.password}</p>}
+                {errors.password && <S.ErrorMessage>{errors.password}</S.ErrorMessage>}
 
-                {/* Campo de Confirmar Senha */}
-                <ButtonContainer
+                <Input
                   type="password"
                   icon={BsLock}
                   placeholder="Confirme sua senha"
                   isPasswordVisible={isPasswordVisible}
                   onTogglePasswordVisibility={() => setIsPasswordVisible(!isPasswordVisible)}
-                  onChange={(e) => setConfirmPassword(e.target.value)} // Passa o onChange
-                  value={confirmPassword} // Passa o valor
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  value={confirmPassword}
                 />
-                {errors.confirmPassword && <p className="labelError">{errors.confirmPassword}</p>}
+                {errors.confirmPassword && <S.ErrorMessage>{errors.confirmPassword}</S.ErrorMessage>}
               </form>
-            </div>
+            </S.FormColumn>
 
-            {/* Opções de seleção */}
-            <div className="test2">
+            <S.OptionsColumn>
               <h2>Gostaria de se Cadastrar como:</h2>
-              <div className="container-option">
-                <div className="option">
+              <S.OptionsContainer>
+                <S.OptionItem>
                   <input
                     type="radio"
                     id="input1"
@@ -143,37 +131,35 @@ function RegisterPage() {
                     checked={selectedOption === "contratante"}
                     onChange={(e) => setSelectedOption(e.target.value)}
                   />
-                  <label htmlFor="input1">CONTRATANTE</label>          
-                </div>
+                  <label htmlFor="input1">CONTRATANTE</label>
+                </S.OptionItem>
 
-                <div className="option group-options">
-                  <div className="option">
-                    <input
-                      type="radio"
-                      id="option2"
-                      name="options"
-                      value="prestador"
-                      checked={selectedOption === "prestador"}
-                      onChange={(e) => setSelectedOption(e.target.value)}
-                    />
-                    <label htmlFor="option2">PROFISSIONAL</label>
-                  </div>
-                </div>
-              </div>
+                <S.OptionItem>
+                  <input
+                    type="radio"
+                    id="option2"
+                    name="options"
+                    value="prestador"
+                    checked={selectedOption === "prestador"}
+                    onChange={(e) => setSelectedOption(e.target.value)}
+                  />
+                  <label htmlFor="option2">PROFISSIONAL</label>
+                </S.OptionItem>
+              </S.OptionsContainer>
 
-              {/* Botão Próximo */}
-              <div className="button-login">
-                <Button 
+              <S.ButtonContainer>
+                <Button
                   onClick={handleNext}
-                  text="Próximo" 
-                  disabled={!email || !password || !confirmPassword || !selectedOption} // Desabilita o botão se os campos não estiverem preenchidos ou se nenhuma opção estiver selecionada
+                  text="Próximo"
+                  disabled={!email || !password || !confirmPassword || !selectedOption}
                 />
-              </div>
-            </div>
-          </div>    
-        </div>
-      </div>
-    </div>
+              </S.ButtonContainer>
+            </S.OptionsColumn>
+
+          </S.FormContainer>
+        </S.FormWrapper>
+      </S.MainContent>
+    </S.RegisterContainer>
   );
 }
 

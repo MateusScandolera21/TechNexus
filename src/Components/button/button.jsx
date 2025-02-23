@@ -1,16 +1,13 @@
 import React from 'react';
-import "./Style.css";
-import { BsArrowBarRight } from "react-icons/bs";
+import { BsArrowBarRight } from 'react-icons/bs';
+import { StyledButton, ButtonText } from './ButtonStyles';
 
 const Button = ({ onClick, text, variant }) => {
-  // Define a classe com base na prop `variant`
-  const buttonClass = variant ? `button ${variant}` : 'button';
-
   return (
-    <button type="submit" onClick={onClick} className={buttonClass}>
-      <span className="button-text">{text}</span>
-      <BsArrowBarRight size={20} className='button-icon' />
-    </button>
+    <StyledButton type="submit" onClick={onClick} className={variant ? `button ${variant}` : 'button'}>
+      <ButtonText>{text}</ButtonText>
+      <BsArrowBarRight size={20} /> {/* Ícone usado diretamente */}
+    </StyledButton>
   );
 };
 
