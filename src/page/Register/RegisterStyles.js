@@ -49,6 +49,21 @@ export const FormContainer = styled.div`
   justify-content: flex-start;
   gap: 15rem;
 
+  @media (max-width: 1500px) {
+    text-align: center;
+    gap: 10rem;
+  }
+  @media (max-width: 1300px) {
+    text-align: center;
+    gap: 7rem;
+  }
+
+  @media (max-width: 1500px) {
+    text-align: center;
+    margin-right: 5rem;
+    gap: 10rem;
+  }
+
   @media (max-width: 1000px) {
     flex-direction: column;
     gap: 2rem;
@@ -64,12 +79,21 @@ export const FormColumn = styled.div`
   justify-content: center;
   margin-left: 15rem;
 
+  @media (max-width: 1400px) {
+    margin-left: 5rem;
+  }
+
+  @media (max-width: 1300px) {
+    margin-left: 5rem;
+  }
+
   @media (max-width: 1000px) {
     margin-left: 0;
   }
 `;
 
 export const OptionsColumn = styled.div`
+  
   text-align: center;
   h2 {
     margin-bottom: 2rem;
@@ -90,6 +114,11 @@ export const OptionsContainer = styled.div`
   @media (max-width: 1000px) {
     margin-left: 0;
     margin-top: 2rem;
+  }
+
+  @media (max-width: 1500px) {
+    text-align: center;
+    margin-right: 5rem;
   }
 `;
 
