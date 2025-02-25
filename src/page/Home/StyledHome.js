@@ -169,11 +169,11 @@ export const TextPrincipal = styled.div`
   text-align: left;
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-family: Inter;
     font-style: normal;
     line-height: 150%;
-    font-weight: 400;
+    font-weight: 500;
     color: #fff;
   }
 
