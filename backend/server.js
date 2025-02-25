@@ -12,7 +12,7 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
-// Configuração do pg
+// Configuração do PostgreSQL
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
@@ -23,7 +23,7 @@ const pool = new Pool({
 
 // Rota para cadastrar um usuário
 app.post('/api/usuarios', async (req, res) => {
-  const { email, senha, confirmarSenha, tipoUsuarioId } = req.body;
+  const { email, senha, confirmarSenha, tipoUsuarioId, areaTIId } = req.body;
 
   // Validação do email
   const validarEmail = (email) => {
@@ -57,19 +57,35 @@ app.post('/api/usuarios', async (req, res) => {
       return res.status(400).json({ message: 'As senhas não coincidem' });
     }
 
+    // Validação da área de TI (apenas para Prestador)
+    if (tipoUsuarioId === 2 && !areaTIId) {
+      return res.status(400).json({ message: 'Selecione uma área de TI' });
+    }
+
     // Gera o hash da senha
     const senhaHash = await hashPassword(senha);
 
     // Insere o usuário no banco de dados
     const { rows } = await pool.query(
-      'INSERT INTO usuarios (email, senha, tipo_usuario_id) VALUES ($1, $2, $3) RETURNING *',
-      [email, senhaHash, tipoUsuarioId]
+      'INSERT INTO usuarios (email, senha, tipo_usuario_id, area_ti_id) VALUES ($1, $2, $3, $4) RETURNING *',
+      [email, senhaHash, tipoUsuarioId, tipoUsuarioId === 2 ? areaTIId : null]
     );
 
     res.status(201).json({ message: 'Usuário cadastrado com sucesso', usuario: rows[0] });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Erro ao cadastrar usuário' });
+  }
+});
+
+// Rota para buscar áreas de TI
+app.get('/api/areas-ti', async (req, res) => {
+  try {
+    const { rows } = await pool.query('SELECT * FROM areas_ti');
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Erro ao buscar áreas de TI');
   }
 });
 
@@ -102,20 +118,25 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-// Rota para salvar a opção
-app.post('/api/salvar-opcao', async (req, res) => {
-  const { opcao } = req.body;
+// Rota para buscar vagas por área de TI
+app.get('/api/vagas', async (req, res) => {
+  const { areaTIId } = req.query; // Recebe o ID da área de TI como query parameter
 
   try {
-    // Insere a opção no banco de dados
-    const { rows } = await pool.query(
-      'INSERT INTO opcoes (opcao) VALUES ($1) RETURNING *', [opcao]
-    );
+    let query = 'SELECT * FROM vagas';
+    let params = [];
 
-    res.status(201).json(rows[0]);
+    // Filtra por área de TI, se o ID for fornecido
+    if (areaTIId) {
+      query += ' WHERE area_ti_id = $1';
+      params.push(areaTIId);
+    }
+
+    const { rows } = await pool.query(query, params);
+    res.json(rows);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Erro ao salvar a opção');
+    res.status(500).send('Erro ao buscar vagas');
   }
 });
 
