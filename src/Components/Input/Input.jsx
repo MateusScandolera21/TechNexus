@@ -34,7 +34,7 @@ const Input = React.forwardRef(
             placeholder={placeholder}
             value={value}
             onChange={onChange}
-            ref={ref} // Passando a ref para o input
+            ref={ref} 
           />
 
           {type === 'password' && (
