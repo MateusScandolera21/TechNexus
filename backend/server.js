@@ -3,9 +3,9 @@ require('dotenv').config(); // Carrega as variáveis do arquivo .env
 const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
-const { hashPassword, comparePassword } = require('./authUtils'); // Importa as funções
+const { hashPassword, comparePassword } = require('./authUtils.js'); // Importa as funções
 
-const app = express();
+const app  = express();
 const port = 5000;
 
 // Middleware
@@ -23,7 +23,7 @@ const pool = new Pool({
 
 // Rota para cadastrar um usuário
 app.post('/api/usuarios', async (req, res) => {
-  const { email, senha, confirmarSenha, tipoUsuarioId, areaTIId } = req.body;
+  const { email, senha, confirmarSenha } = req.body;
 
   // Validação do email
   const validarEmail = (email) => {
@@ -57,18 +57,13 @@ app.post('/api/usuarios', async (req, res) => {
       return res.status(400).json({ message: 'As senhas não coincidem' });
     }
 
-    // Validação da área de TI (apenas para Prestador)
-    if (tipoUsuarioId === 2 && !areaTIId) {
-      return res.status(400).json({ message: 'Selecione uma área de TI' });
-    }
-
     // Gera o hash da senha
     const senhaHash = await hashPassword(senha);
 
     // Insere o usuário no banco de dados
     const { rows } = await pool.query(
-      'INSERT INTO usuarios (email, senha, tipo_usuario_id, area_ti_id) VALUES ($1, $2, $3, $4) RETURNING *',
-      [email, senhaHash, tipoUsuarioId, tipoUsuarioId === 2 ? areaTIId : null]
+      'INSERT INTO usuarios (email, senha) VALUES ($1, $2) RETURNING *',
+      [email, senhaHash]
     );
 
     res.status(201).json({ message: 'Usuário cadastrado com sucesso', usuario: rows[0] });

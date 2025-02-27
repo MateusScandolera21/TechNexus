@@ -16,7 +16,7 @@ function Login() {
         senha: loginSenha,
       });
       setMensagem(`Login bem-sucedido: ${response.data.usuario.email}`);
-      navigate('/dashboard'); // Redireciona para a página de dashboard (ou outra página)
+      navigate('/Inicio'); // Redireciona para a página de dashboard (ou outra página)
     } catch (error) {
       if (error.response && error.response.data.message) {
         setMensagem(error.response.data.message); // Exibe a mensagem de erro do backend
@@ -44,6 +44,7 @@ function Login() {
           onChange={(e) => setLoginSenha(e.target.value)}
         />
         <button onClick={fazerLogin}>Login</button>
+        {/* <button onClick={fazerCadastro}>Login</button> */}
       </div>
 
       {mensagem && <p>{mensagem}</p>}
