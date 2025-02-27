@@ -68,8 +68,23 @@ const Login = () => {
               type="email"
               icon={BsEnvelope}
               placeholder="Digite Seu Email"
+<<<<<<< HEAD
               value={loginEmail}
               onChange={(e) => setLoginEmail(e.target.value)} // Adicionado onChange
+=======
+              value={ loginEmail }
+              onChange={(e) => setLoginEmail(e.targer.value)}
+            />
+            
+            <Input
+              type="password"
+              icon={ BsLock }
+              placeholder="********"
+              isPasswordVisible={ isPasswordVisible }
+              onTogglePasswordVisibility={() => setIsPasswordVisible(!isPasswordVisible)}
+              value={ loginSenha }
+              onChange={(e) => setLoginSenha(e.targer.value)}
+>>>>>>> bed864c (att)
             />
 
             <Input

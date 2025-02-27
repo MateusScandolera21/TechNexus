@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SidebarContainer = styled.div`
-  background: linear-gradient(180deg, #415c55 0%, #41ac8f 48.52%, #273330 100%);
+  background-color: #33685A;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,8 +14,8 @@ export const SidebarContainer = styled.div`
   z-index: 20;
 
   &.top-bar {
-    background: linear-gradient(0.25turn, #415c55 0%, #41ac8f 48.52%, #273330 100%);
-    height: 80px;
+    background-color: #33685A;
+    height: 100px;
     flex-direction: row;
     justify-content: flex-start;
     padding: 10px 20px;
