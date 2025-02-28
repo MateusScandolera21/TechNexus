@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #FAF9F9;
     color: #333;
   }
 
@@ -28,6 +28,20 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     outline: none;
     cursor: pointer;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 0.5vw;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #FAF9F9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #33685A;
+    border-radius: 10px;
   }
 `;
 

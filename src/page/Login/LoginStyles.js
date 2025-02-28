@@ -75,7 +75,7 @@ export const LoginRight = styled.div`
   justify-content: center;
   align-items: center;
   margin-left: 30rem;
-
+  
   @media (max-width: 1000px) {
     margin-left: 0; 
     padding: 1rem;

@@ -13,9 +13,13 @@ export const MainContent = styled.div`
   margin-top: calc(15% - 150px);
   position: relative;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1536px) {
+    margin-top: 7rem;
+  }
+  @media (max-width: 1024px) {
     padding-left: 0;
-    margin-top: 80px; 
+    margin-top: calc(15% - 30px);
+    margin-right: 20rem;
   }
 `;
 
@@ -41,7 +45,7 @@ export const FormContainer = styled.div`
 
 export const FormsWrapper = styled.div`
   display: flex;
-  margin-left: 4rem;
+  margin-left: 2rem;
   margin-top: 0;
   justify-content: space-between;
   gap: 20px;
@@ -56,8 +60,9 @@ export const FormsWrapper = styled.div`
 
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10rem; /* Aumentei o espaçamento entre colunas */
+  row-gap: 20px;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr; /* 1 coluna em telas menores */
@@ -71,7 +76,7 @@ export const FormGroup = styled.div`
   font-size: 14px;
   align-items: flex-start; 
   margin-bottom: 16px;
-
+  
   label {
     margin-bottom: 8px;
     font-weight: bold; 
@@ -79,18 +84,19 @@ export const FormGroup = styled.div`
 
   input {
     width: 100%;
-    padding: 8px;
+    padding: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
     box-sizing: border-box;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
 `;
 
 export const AddressGroup = styled.div`
   display: grid;
-  grid-template-columns: 1fr 100px; /* Endereço ocupa mais espaço, Número menos */
-  gap: 10px; /* Espaçamento entre os campos */
+  grid-template-columns: 1fr 100px; 
+  gap: 10px; 
   width: 100%;
   align-items: start;
 
@@ -103,12 +109,13 @@ export const AddressGroup = styled.div`
 
   input {
     width: 100%;
-    padding: 8px;
-    font-size: 16px;
+    padding: 14px;
+    font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
     outline: none;
     text-align: left;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
 `;
 
@@ -139,4 +146,11 @@ export const TopLeftLink = styled(Link)`
     top: 140px;
     left: 50px;
   }
+`;
+
+export const ErrorMessage = styled.span`
+  color: #ff0000; 
+  font-size: 0.875rem; 
+  margin-top: 0.25rem; 
+  display: block; 
 `;

@@ -38,7 +38,7 @@ export const LogoBar = styled.div`
   display: flex;
   justify-content: center;
   width: ${(props) => (props.isTopBar ? 'auto' : '100%')};
-  margin-left: ${(props) => (props.isTopBar ? '20px' : '0')};
+  margin-left: ${(props) => (props.isTopBar ? '90px' : '0')};
 
   @media (max-width: 1000px) {
     margin-bottom: 0;
