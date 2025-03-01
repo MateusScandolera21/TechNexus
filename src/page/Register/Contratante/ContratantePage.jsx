@@ -1,15 +1,21 @@
 import React, { useState } from "react";
+
 import { useForm } from 'react-hook-form';
 import { withMask } from 'use-mask-input';
+
 import { fetchAddressByZipcode } from '../../../api/cepService';
 import { BsChevronBarLeft } from "react-icons/bs";
+
+import * as S from './ContratantePageStyles';
 import Button from '../../../Components/Button/Button';
 import Sidebar from '../../../Components/Sidebar/Sidebar';
-import * as S from './ContratantePageStyles';
+import SocialFields from '../../../Components/SocialFields/SocialFields';
+
 
 function ContratantePage() {
   const [address, setAddress] = useState({ city: '', street: '', neighborhood: '' });
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const [socialFields, setSocialFields] = useState([{ id: 1, value: '' }]);
 
   // Função para completar o CEP
   async function handleZipcodeBlur(e) {
@@ -32,6 +38,8 @@ function ContratantePage() {
     console.log(data);
   };
 
+  
+  
   return (
     <S.RegisterContainer>
       <Sidebar showSteps={true} forceTopBar={true} />
@@ -179,19 +187,10 @@ function ContratantePage() {
                   {errors.telefone && <S.ErrorMessage>{errors.telefone.message}</S.ErrorMessage>}
                 </S.FormGroup>
 
-                <S.FormGroup>
-                  <label>Rede Social (Opcional)</label>
-                  <input
-                    type="text"
-                    placeholder="Outra Rede Social (Opcional)"
-                    {...register('redeSocial')}
-                  />
-                </S.FormGroup>
+                <SocialFields socialFields={socialFields} setSocialFields={setSocialFields} />
               </S.GridContainer>
 
-              <S.ButtonWrapper>
-                <Button type="submit" text="Próximo" />
-              </S.ButtonWrapper>
+              {/* <S.ButtonWrapper> <Button type="submit" text="Próximo" /> </S.ButtonWrapper> */}
             </form>
           </S.FormsWrapper>
         </S.FormContainer>

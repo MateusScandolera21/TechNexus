@@ -154,3 +154,17 @@ export const ErrorMessage = styled.span`
   margin-top: 0.25rem; 
   display: block; 
 `;
+
+export const InputContainer = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+export const IconWrapper = styled.div`
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: black; 
+`;

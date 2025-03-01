@@ -38,7 +38,7 @@ export const InputField = styled.input`
   width: 100%;
   padding: 1.5rem;
   padding-left: 3rem;
-  padding-right: 3rem; /* Ajuste para o ícone da direita */
+  padding-right: 3rem; 
   border-radius: 4px;
   border: 1px solid #ddd;
   font-size: 1rem;

@@ -57,7 +57,7 @@ export const HeaderContainer = styled.div`
 export const LogoSuperior = styled.div`
   position: absolute;
   top: 34px;
-  left: 6.80rem;
+  left: 4.50rem;
 
   @media (max-width: 1600px) {
     left: 4rem;
