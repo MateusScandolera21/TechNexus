@@ -36,7 +36,7 @@ export const FormWrapper = styled.div`
   padding: 20px 20px 20px 0;
   text-align: left;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     padding: 20px;
     text-align: center;
     flex-direction: column;
@@ -49,25 +49,22 @@ export const FormContainer = styled.div`
   justify-content: flex-start;
   gap: 15rem;
 
-  @media (max-width: 1500px) {
-    text-align: center;
-    gap: 10rem;
-  }
   @media (max-width: 1300px) {
     text-align: center;
     gap: 7rem;
   }
 
-  @media (max-width: 1500px) {
+  @media (max-width: 1536px) {
     text-align: center;
     margin-right: 5rem;
     gap: 10rem;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     gap: 2rem;
     align-items: center;
+    margin-left: 5rem;
   }
 `;
 

@@ -2,10 +2,12 @@ import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { withMask } from 'use-mask-input';
 import { fetchAddressByZipcode } from '../../../api/cepService';
+
 import * as S from './PrestadorStyles';
 import { BsChevronBarLeft } from "react-icons/bs";
 import Sidebar from '../../../Components/Sidebar/Sidebar';
 import SocialFields from '../../../Components/SocialFields/SocialFields';
+import TrainingPage from '../../../Components/Training/TrainingPage';
 
 const Prestador = () => {
   const section1Ref = useRef(null);
@@ -17,18 +19,25 @@ const Prestador = () => {
   };
 
   const [address, setAddress] = useState({ city: '', street: '', neighborhood: '' });
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm();
 
+  // Função de preenchimento do endereço após o blur no CEP
   async function handleZipcodeBlur(e) {
-    const zipcode = e.target.value.replace(/\D/g, '');
+    const zipcode = e.target.value.replace(/\D/g, ''); // remove caracteres não numéricos
     if (zipcode.length === 8) {
       const address = await fetchAddressByZipcode(zipcode);
       if (address) {
+        // Atualiza o estado do endereço
         setAddress({
-          city: address.localidade,
-          street: address.logradouro,
-          neighborhood: address.bairro,
+          city: address.city,
+          street: address.street,
+          neighborhood: address.neighborhood,
         });
+
+        // Atualiza os valores no react-hook-form
+        setValue('endereco', address.street);  // street
+        setValue('bairro', address.neighborhood);  // neighborhood
+        setValue('cidade', address.city);  // city
       } else {
         console.log("Endereço não encontrado.");
       }
@@ -47,6 +56,7 @@ const Prestador = () => {
       <S.TopLeftLink to="/register">
         <BsChevronBarLeft size={20} /> Anterior
       </S.TopLeftLink>
+
       <S.Section ref={section1Ref}>
         <S.FormContainer>
           <h2>Cadastre suas Informações</h2>
@@ -122,7 +132,13 @@ const Prestador = () => {
                 <S.AddressGroup>
                   <div>
                     <label>Endereço</label>
-                    <input type="text" placeholder="Endereço" value={address.street} readOnly {...register('endereco')} />
+                    <input 
+                      type="text" 
+                      placeholder="Endereço" 
+                      value={address.street} 
+                      readOnly 
+                      {...register('endereco')} 
+                    />
                   </div>
                   <div>
                     <label>Número</label>
@@ -140,12 +156,24 @@ const Prestador = () => {
 
                 <S.FormGroup>
                   <label>Bairro</label>
-                  <input type="text" placeholder="Bairro" value={address.neighborhood} readOnly {...register('bairro')} />
+                  <input 
+                    type="text" 
+                    placeholder="Bairro" 
+                    value={address.neighborhood} 
+                    readOnly 
+                    {...register('bairro')} 
+                  />
                 </S.FormGroup>
 
                 <S.FormGroup>
                   <label>Cidade</label>
-                  <input type="text" placeholder="Cidade" value={address.city} readOnly {...register('cidade')} />
+                  <input 
+                    type="text" 
+                    placeholder="Cidade" 
+                    value={address.city} 
+                    readOnly 
+                    {...register('cidade')} 
+                  />
                 </S.FormGroup>
 
                 <S.FormGroup>
@@ -158,6 +186,22 @@ const Prestador = () => {
             </form>
           </S.FormsWrapper>
         </S.FormContainer>
+      </S.Section>
+
+      <S.Section ref={section2Ref}>
+        <TrainingPage />
+        <h2>Informe suas habilidades</h2>
+        <form method="post">
+          <S.Textbox
+            className="caixa-habilidades"
+            name="habilidades"
+            placeholder="Faça uma breve descrição de suas habilidades"
+          />
+        </form>
+      </S.Section>
+
+      <S.Section ref={section3Ref}>
+        aaaaaaaaaaaaaaaaaa
       </S.Section>
     </S.Container>
   );

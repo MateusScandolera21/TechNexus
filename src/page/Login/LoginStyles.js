@@ -13,8 +13,15 @@ export const ContentWrapper = styled.div`
   padding-left: 2rem;
   position: relative;
 
-  @media (max-width: 1000px) {
-    padding-left: 0;
+  @media (max-width: 1024px) {
+    margin-left: 3rem;
+    margin-top: 5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 5rem;
     margin-top: 5rem;
     align-items: center;
     text-align: center;
@@ -76,7 +83,7 @@ export const LoginRight = styled.div`
   align-items: center;
   margin-left: 30rem;
   
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     margin-left: 0; 
     padding: 1rem;
   }

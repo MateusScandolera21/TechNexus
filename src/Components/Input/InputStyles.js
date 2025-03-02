@@ -6,7 +6,7 @@ export const InputContainer = styled.div`
   margin-bottom: 1rem;
   position: relative;
   margin-top: 1rem;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
   background-color: white;
 `;
 
@@ -39,7 +39,7 @@ export const InputField = styled.input`
   padding: 1.5rem;
   padding-left: 3rem;
   padding-right: 3rem; 
-  border-radius: 4px;
+  border-radius: 5px;
   border: 1px solid #ddd;
   font-size: 1rem;
 `;

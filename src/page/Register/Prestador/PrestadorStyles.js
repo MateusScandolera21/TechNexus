@@ -8,10 +8,13 @@ export const Container = styled.div`
 `;
 
 export const Section = styled.section`
-  height: 100vh;
+  min-height: 100vh;  /* Garante que a seção tenha no mínimo a altura da tela */
   scroll-snap-align: start;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  overflow: hidden;
+  flex-wrap: wrap;  /* Garante que os elementos dentro da section se ajustem */
 `;
 
 export const FormContainer = styled.div`
@@ -19,19 +22,29 @@ export const FormContainer = styled.div`
   max-width: 900px;
   padding: 30px;
   text-align: center;
-  margin-left: 25%;
+  margin: 0 auto;
+  margin-top: 10rem;
+  box-sizing: border-box;
+  margin-bottom: 15rem;
 
   h2 {
     margin-bottom: 4rem;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     margin-left: 5rem;
     margin-top: calc(15% + 250);
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 5rem;
+    padding: 20px;
+    margin-left: 1rem;
+    width: 100%; /* Garante que o FormContainer ocupe toda a largura disponível */
   }
 `;
 
@@ -41,23 +54,25 @@ export const FormsWrapper = styled.div`
   margin-top: 0;
   justify-content: space-between;
   gap: 20px;
+  flex-wrap: wrap; /* Permite que os elementos se ajustem se não couberem */
   
-
   @media (max-width: 1000px) {
     flex-direction: column;
-    align-items: center; 
-    width: 100%; 
+    align-items: center;
+    width: 100%;
   }
 `;
 
 export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 10rem; 
+  column-gap: 10rem;
   row-gap: 20px;
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 15px;
   }
 `;
 
@@ -71,7 +86,9 @@ margin-bottom: 16px;
 
 label {
   margin-bottom: 8px;
-  font-weight: bold; 
+  font-weight: bold;
+  font-weight: bold;
+  text-align: left;
 }
 
 input {
@@ -82,19 +99,20 @@ input {
   font-size: 14px;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  outline: none;
 }
 `;
 
 export const AddressGroup = styled.div`
   display: grid;
-  grid-template-columns: 1fr 100px; 
-  gap: 10px; 
+  grid-template-columns: 1fr 100px;
+  gap: 10px;
   width: 100%;
   align-items: start;
 
   label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: bold;
     text-align: left;
   }
@@ -108,6 +126,11 @@ export const AddressGroup = styled.div`
     outline: none;
     text-align: left;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 `;
 
@@ -129,8 +152,33 @@ export const TopLeftLink = styled(Link)`
   align-items: center;
   z-index: 10;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     top: 140px;
     left: 50px;
   }
+
+  @media (max-width: 768px) {
+    top: 130px;
+    left: 5%;
+  }
 `;
+
+export const Textbox = styled.textarea`
+  width: 100%;
+  max-width: 976px;
+  height: 157px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: horizontal;
+  margin-bottom: 15rem;
+
+  &::placeholder {
+    font-size: 18px; 
+    color: #888; 
+  }
+`;
+
+
+

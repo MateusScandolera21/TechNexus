@@ -17,9 +17,13 @@ export const MainContent = styled.div`
     margin-top: 7rem;
   }
   @media (max-width: 1024px) {
-    padding-left: 0;
     margin-top: calc(15% - 30px);
     margin-right: 20rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: calc(15% - 30px);
+    margin-right: 10rem;
   }
 `;
 

@@ -40,7 +40,7 @@ flex-direction: column;
 border-radius: 5px;
 font-size: 14px;
 align-items: flex-start; 
-margin-bottom: 16px;
+
 
 label {
   margin-bottom: 8px;
@@ -55,5 +55,6 @@ input {
   font-size: 14px;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  outline: none;
 }
 `;

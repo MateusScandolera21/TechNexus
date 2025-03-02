@@ -4,6 +4,7 @@ import GlobalStyle from './Globalstyle';
 import RegisterPage  from './page/Register/RegisterPage';
 import ContratantePage from './page/Register/Contratante/ContratantePage';
 import PrestadorPage from './page/Register/Prestador/PrestadorPage';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
