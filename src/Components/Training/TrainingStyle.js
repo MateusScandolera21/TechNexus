@@ -15,6 +15,7 @@ export const FormContainer = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column; 
+    margin-left: 2.50rem;
   }
 `;
 

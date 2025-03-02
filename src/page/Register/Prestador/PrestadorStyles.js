@@ -166,6 +166,7 @@ export const TopLeftLink = styled(Link)`
 export const Textbox = styled.textarea`
   width: 100%;
   max-width: 976px;
+  min-width: 976px;
   height: 157px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -177,6 +178,12 @@ export const Textbox = styled.textarea`
   &::placeholder {
     font-size: 18px; 
     color: #888; 
+  }
+
+  @media (max-width: 768px){
+    width: 100%;
+    max-width: 676px;
+    min-width: 676px;
   }
 `;
 
