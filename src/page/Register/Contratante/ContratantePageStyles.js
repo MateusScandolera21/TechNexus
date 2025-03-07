@@ -16,6 +16,7 @@ export const MainContent = styled.div`
   @media (max-width: 1536px) {
     margin-top: 7rem;
   }
+  
   @media (max-width: 1024px) {
     margin-top: calc(15% - 30px);
     margin-right: 20rem;
@@ -38,12 +39,23 @@ export const FormContainer = styled.div`
     margin-bottom: 4rem;
   }
 
-  @media (max-width: 1000px) {
-    margin-left: 5rem;
+  @media (max-width: 1024px) {
+    margin-left: 8rem;
     display: flex;
     flex-direction: column;
     align-items: center; 
     justify-content: center; 
+
+    h2{
+      margin-left: 4rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h2{
+      margin-left: 3rem;
+      margin-top: 30px;
+    }
   }
 `;
 
@@ -55,7 +67,7 @@ export const FormsWrapper = styled.div`
   gap: 20px;
   
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center; 
     width: 100%; 
@@ -65,11 +77,16 @@ export const FormsWrapper = styled.div`
 export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 10rem; /* Aumentei o espaçamento entre colunas */
+  column-gap: 10rem; 
   row-gap: 20px;
 
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    margin-left: 2rem;
+  }
+
   @media (max-width: 768px) {
-    grid-template-columns: 1fr; /* 1 coluna em telas menores */
+    grid-template-columns: 1fr; 
   }
 `;
 
@@ -94,6 +111,7 @@ export const FormGroup = styled.div`
     font-size: 14px;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    outline-color: #488574;
   }
 `;
 
@@ -117,9 +135,9 @@ export const AddressGroup = styled.div`
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    outline: none;
     text-align: left;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    outline-color: #488574;
   }
 `;
 
@@ -129,7 +147,7 @@ export const ButtonWrapper = styled.div`
   margin-top: 2rem;
   margin-left: 3rem;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     justify-content: center;
     margin-top: 1rem;
   }
@@ -146,7 +164,7 @@ export const TopLeftLink = styled(Link)`
   align-items: center;
   z-index: 10;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     top: 140px;
     left: 50px;
   }

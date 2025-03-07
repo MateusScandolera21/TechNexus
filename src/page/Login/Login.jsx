@@ -7,7 +7,11 @@ import Input from '../../Components/Input/Input';
 import Button from '../../Components/Button/Button';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 
-import { BsEnvelope, BsLock, BsChevronBarLeft } from "react-icons/bs";
+import { 
+  BsEnvelope, 
+  BsLock, 
+  BsChevronBarLeft
+} from "react-icons/bs";
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState('');
@@ -82,23 +86,17 @@ const Login = () => {
               onChange={(e) => setLoginSenha(e.targer.value)}
             />
 
-            <Input
-              type={isPasswordVisible ? "text" : "password"}
-              icon={BsLock}
-              placeholder="********"
-              isPasswordVisible={isPasswordVisible}
-              onTogglePasswordVisibility={() => setIsPasswordVisible(!isPasswordVisible)}
-              value={loginSenha}
-              onChange={(e) => setLoginSenha(e.target.value)} // Adicionado onChange
-            />
-
             <Button onClick={fazerLogin} text="Entrar" />
             {mensagem && <p>{mensagem}</p>}
 
             <S.Options>
-              <label>
-                <input type="checkbox" /> Mantenha-me Conectado
+            <div>
+              <input type="checkbox" />
+              <label>           
+                Mantenha-me Conectado 
               </label>
+            </div>
+              <a href='/recuperarsenha'>Recuperar a senha</a>
             </S.Options>
           </form>
         </S.LoginRight>

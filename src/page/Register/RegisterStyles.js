@@ -8,7 +8,7 @@ export const RegisterContainer = styled.div`
   padding: 0;
   margin: 0;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
   }
 `;
@@ -22,7 +22,7 @@ export const MainContent = styled.div`
   padding-top: 80px;
   padding-left: 20px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     padding-top: 120px;
     padding-left: 0;
     align-items: center;
@@ -49,15 +49,15 @@ export const FormContainer = styled.div`
   justify-content: flex-start;
   gap: 15rem;
 
-  @media (max-width: 1300px) {
-    text-align: center;
-    gap: 7rem;
-  }
-
   @media (max-width: 1536px) {
     text-align: center;
     margin-right: 5rem;
     gap: 10rem;
+  }
+
+  @media (max-width: 1280px) {
+    text-align: center;
+    gap: 7rem;
   }
 
   @media (max-width: 1024px) {
@@ -76,15 +76,15 @@ export const FormColumn = styled.div`
   justify-content: center;
   margin-left: 15rem;
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1536px) {
     margin-left: 5rem;
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1280px) {
     margin-left: 5rem;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     margin-left: 0;
   }
 `;
@@ -96,7 +96,7 @@ export const OptionsColumn = styled.div`
     margin-bottom: 2rem;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     text-align: center;
   }
 `;
@@ -108,14 +108,14 @@ export const OptionsContainer = styled.div`
   margin-left: 11rem;
   margin-top: 5rem;
 
-  @media (max-width: 1000px) {
-    margin-left: 0;
-    margin-top: 2rem;
-  }
-
   @media (max-width: 1500px) {
     text-align: center;
     margin-right: 5rem;
+  }
+
+  @media (max-width: 1024px) {
+    margin-left: 0;
+    margin-top: 2rem;
   }
 `;
 
@@ -136,7 +136,7 @@ export const OptionItem = styled.div`
     font-size: larger;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     input[type="radio"] {
     margin-right: 10px;
     transform: scale(1.5);
@@ -150,7 +150,7 @@ export const ButtonContainer = styled.div`
   justify-content: flex-end;
   margin-top: 5.5rem;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     justify-content: center;
     margin-top: 2rem;
   }
@@ -167,7 +167,7 @@ export const HeaderContainer = styled.div`
   padding: 0 20px;
   z-index: 10;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     justify-content: space-between;
     gap: 3rem;
     padding: 1rem;
@@ -207,7 +207,7 @@ export const LoginLinkContainer = styled.div`
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     a.loginButton {
       color: #273330;
       border-color: #273330;
@@ -224,8 +224,8 @@ export const FormMessage = styled.p`
   font-size: 1rem;
   color: #333;
 
-  @media (max-width: 1000px) {
-    display: none; /* Oculta o parágrafo em telas menores */
+  @media (max-width: 1024px) {
+    display: none; 
   }
 `;
 

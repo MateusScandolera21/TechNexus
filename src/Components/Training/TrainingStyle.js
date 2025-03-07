@@ -44,6 +44,10 @@ export const TrainingSection = styled.div`
   min-height: 200px; 
   align-items: start; 
 
+  h2{
+    margin-bottom: 10px;
+  }
+  
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     max-width: 400px;
@@ -55,7 +59,7 @@ export const SelectContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 10px;
+ 
 
   select {
     padding: 12px 16px;
@@ -96,6 +100,8 @@ export const FormGroup = styled.div`
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     outline: none;
   }
+
+  
 `;
 
 export const AddressGroup = styled.div`
@@ -144,6 +150,7 @@ export const ButtonContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 15px;
+  outline: none;
 `;
 
 export const ButtonRemove = styled.button`

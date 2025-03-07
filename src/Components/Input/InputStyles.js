@@ -42,6 +42,7 @@ export const InputField = styled.input`
   border-radius: 5px;
   border: 1px solid #ddd;
   font-size: 1rem;
+  outline-color: #488574;
 `;
 
 export const PasswordIcon = styled.div`

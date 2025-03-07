@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const LoginContainer = styled.div`
+export const ForgotContainer = styled.div`
   display: flex;
   height: 100vh;
 `;
@@ -56,6 +56,32 @@ export const HeaderContainer = styled.div`
   }
 `;
 
+export const TopLeftLogin = styled(Link)`
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+`;
+
+export const LoginRight = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30rem;
+  
+  Button{
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 1024px) {
+    margin-left: 0; 
+    padding: 1rem;
+  }
+`;
+
 export const SignupContainer = styled.div`
   display: flex;
   align-items: center;
@@ -81,50 +107,4 @@ export const SignupContainer = styled.div`
       display: none; 
     }
   }
-`;
-
-export const LoginRight = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: 30rem;
-  
-  @media (max-width: 1024px) {
-    margin-left: 0; 
-    padding: 1rem;
-  }
-`;
-
-export const Options = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 600px;
-  font-size: 0.8rem;
-  margin-top: 1rem;
-
-  div{
-    display: flex;
-    gap: 4px;
-    margin-bottom: 10px;
-  }
-
-  label{
-    margin-top: 2px
-  }
-
-  @media (max-width: 1000px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-
-export const TopLeftLogin = styled(Link)`
-  text-decoration: none;
-  color: #000;
-  font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
 `;

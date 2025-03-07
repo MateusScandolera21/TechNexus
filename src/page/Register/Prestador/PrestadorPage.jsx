@@ -35,9 +35,9 @@ const Prestador = () => {
         });
 
         // Atualiza os valores no react-hook-form
-        setValue('endereco', address.street);  // street
-        setValue('bairro', address.neighborhood);  // neighborhood
-        setValue('cidade', address.city);  // city
+        setValue('endereco', address.street);  
+        setValue('bairro', address.neighborhood);  
+        setValue('cidade', address.city);
       } else {
         console.log("Endereço não encontrado.");
       }
@@ -58,9 +58,11 @@ const Prestador = () => {
       </S.TopLeftLink>
 
       <S.Section ref={section1Ref}>
+        
         <S.FormContainer>
           <h2>Cadastre suas Informações</h2>
           <S.FormsWrapper>
+
             <form onSubmit={handleSubmit(onSubmit)}>
               <S.GridContainer>
                 <S.FormGroup>

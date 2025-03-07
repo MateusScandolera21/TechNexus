@@ -23,7 +23,7 @@ export const SidebarContainer = styled.div`
     z-index: 1000;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     width: 100%;
     height: 80px;
     flex-direction: row;
@@ -40,7 +40,7 @@ export const LogoBar = styled.div`
   width: ${(props) => (props.isTopBar ? 'auto' : '100%')};
   margin-left: ${(props) => (props.isTopBar ? '90px' : '0')};
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     margin-bottom: 0;
     width: auto;
     margin-left: 20px;
@@ -53,7 +53,7 @@ export const LogoImage = styled.img`
   height: auto;
   margin-top: ${(props) => (props.isTopBar ? '0' : '10rem')};
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     max-width: 150px;
     margin-top: 0;
   }
@@ -69,7 +69,7 @@ export const TextPrincipal = styled.h2`
   max-width: 274px;
   margin: 0;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     display: none; /* Oculta o texto em telas menores */
   }
 `;

@@ -8,13 +8,21 @@ export const Container = styled.div`
 `;
 
 export const Section = styled.section`
-  min-height: 100vh;  /* Garante que a seção tenha no mínimo a altura da tela */
+  min-height: 100vh;  
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  flex-wrap: wrap;  /* Garante que os elementos dentro da section se ajustem */
+  flex-wrap: wrap;  
+
+  @media (max-width: 1024px) {
+  
+  }
+
+  @media (max-width: 768px) {
+    
+  }
 `;
 
 export const FormContainer = styled.div`
@@ -32,7 +40,6 @@ export const FormContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-    margin-left: 5rem;
     margin-top: calc(15% + 250);
     display: flex;
     flex-direction: column;
@@ -41,10 +48,10 @@ export const FormContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin-top: 5rem;
+    margin-top: 6.50rem;
     padding: 20px;
     margin-left: 1rem;
-    width: 100%; /* Garante que o FormContainer ocupe toda a largura disponível */
+    width: 100%; 
   }
 `;
 
@@ -54,9 +61,9 @@ export const FormsWrapper = styled.div`
   margin-top: 0;
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: wrap; /* Permite que os elementos se ajustem se não couberem */
+  flex-wrap: wrap; 
   
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -99,7 +106,7 @@ input {
   font-size: 14px;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  outline: none;
+  outline-color: #488574;
 }
 `;
 
@@ -123,9 +130,9 @@ export const AddressGroup = styled.div`
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    outline: none;
     text-align: left;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    outline-color: #488574;
   }
 
   @media (max-width: 768px) {

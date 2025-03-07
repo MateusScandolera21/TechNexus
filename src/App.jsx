@@ -4,6 +4,7 @@ import GlobalStyle from './Globalstyle';
 import RegisterPage  from './page/Register/RegisterPage';
 import ContratantePage from './page/Register/Contratante/ContratantePage';
 import PrestadorPage from './page/Register/Prestador/PrestadorPage';
+import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/contratante" element={<ContratantePage />} />
         <Route path="/prestador" element={<PrestadorPage />} />
+        <Route path="/recuperarsenha" element={<ForgotPassword />} />
       </Routes>
     </Router>
   );
